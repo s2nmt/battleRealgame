@@ -1,4 +1,4 @@
-import { arenaInfo } from '../data/products';
+import { storeInfo } from '../data/products';
 
 export default function Hero() {
   return (
@@ -7,28 +7,28 @@ export default function Hero() {
       <div className="container hero__inner">
         <div className="hero__badge">
           <span className="pulse" />
-          {arenaInfo.status} — Sắp khai trương
+          {storeInfo.status} — Giao hàng toàn quốc
         </div>
 
         <h1 className="hero__title">
-          Sân chơi game
+          xe điều khiển
           <br />
-          <span className="hero__highlight">xe thực tế</span>
+          <span className="hero__highlight">từ xa RC</span>
         </h1>
 
-        <p className="hero__desc">{arenaInfo.description}</p>
+        <p className="hero__desc">{storeInfo.description}</p>
 
         <div className="hero__actions">
-          <a href="#contact" className="btn btn--primary btn--lg">
-            Đăng Ký Chơi Sớm
+          <a href="#shop" className="btn btn--primary btn--lg">
+            Xem Sản Phẩm
           </a>
-          <a href="#packages" className="btn btn--outline btn--lg">
-            Xem Bảng Giá
+          <a href="#contact" className="btn btn--outline btn--lg">
+            Liên Hệ Mua Hàng
           </a>
         </div>
 
         <div className="hero__stats">
-          {arenaInfo.highlights.map((h) => (
+          {storeInfo.highlights.map((h) => (
             <div key={h.label} className="hero__stat">
               <span className="hero__stat-value">{h.value}</span>
               <span className="hero__stat-label">{h.label}</span>
@@ -42,7 +42,7 @@ export default function Hero() {
           <div className="hero__track" />
           <span className="hero__vehicle hero__vehicle--1">🏎️</span>
           <span className="hero__vehicle hero__vehicle--2">🛡️</span>
-          <span className="hero__vehicle hero__vehicle--3">🔫</span>
+          <span className="hero__vehicle hero__vehicle--3">📦</span>
         </div>
       </div>
     </section>

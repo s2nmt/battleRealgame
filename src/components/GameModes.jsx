@@ -1,25 +1,25 @@
-import { gameModes } from '../data/products';
+import { categories } from '../data/products';
 
 export default function GameModes() {
   return (
-    <section id="modes" className="section">
+    <section id="categories" className="section">
       <div className="container">
         <div className="section__header">
-          <span className="section__tag">Chế độ chơi</span>
-          <h2 className="section__title">Đấu thật trên sân — không phải trên màn hình</h2>
+          <span className="section__tag">Danh mục sản phẩm</span>
+          <h2 className="section__title">Chọn loại xe phù hợp với bạn</h2>
           <p className="section__desc">
-            Mỗi trận đấu là cuộc chiến thực sự giữa những chiếc xe điều khiển từ xa. Bạn ngồi tại khu
-            cabin, điều khiển xe thật và cạnh tranh với người chơi khác.
+            Từ xe đua tốc độ, xe tăng vui chơi đến xe chiến đấu hầm hố — mỗi dòng xe đều có nhiều mẫu
+            với mức giá khác nhau.
           </p>
         </div>
 
         <div className="modes-grid">
-          {gameModes.map((mode) => (
-            <article key={mode.id} className="mode-card">
-              <div className="mode-card__icon">{mode.icon}</div>
-              <h3 className="mode-card__title">{mode.title}</h3>
-              <p className="mode-card__desc">{mode.description}</p>
-              <span className="mode-card__players">{mode.players}</span>
+          {categories.map((cat) => (
+            <article key={cat.id} className="mode-card">
+              <div className="mode-card__icon">{cat.icon}</div>
+              <h3 className="mode-card__title">{cat.title}</h3>
+              <p className="mode-card__desc">{cat.description}</p>
+              <span className="mode-card__players">{cat.players}</span>
             </article>
           ))}
         </div>

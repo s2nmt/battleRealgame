@@ -1,20 +1,20 @@
-import { playPackages } from '../data/products';
+import { bundles } from '../data/products';
 import { formatPrice } from '../utils/formatPrice';
 
 export default function Packages() {
   return (
-    <section id="packages" className="section section--dark">
+    <section id="bundles" className="section section--dark">
       <div className="container">
         <div className="section__header">
-          <span className="section__tag">Bảng giá chơi tại sân</span>
-          <h2 className="section__title">Đến chơi — không cần mua xe</h2>
+          <span className="section__tag">Combo tiết kiệm</span>
+          <h2 className="section__title">Mua combo — giá tốt hơn mua lẻ</h2>
           <p className="section__desc">
-            Tất cả xe và thiết bị có sẵn tại sân. Bạn chỉ cần đến, chọn gói và bắt đầu chiến đấu.
+            Các gói combo đã bao gồm phụ kiện cần thiết. Tiết kiệm chi phí và sẵn sàng chơi ngay khi nhận hàng.
           </p>
         </div>
 
         <div className="packages-grid">
-          {playPackages.map((pkg) => (
+          {bundles.map((pkg) => (
             <article
               key={pkg.id}
               className={`package-card ${pkg.featured ? 'package-card--featured' : ''}`}
@@ -32,7 +32,7 @@ export default function Packages() {
                 ))}
               </ul>
               <a href="#contact" className={`btn ${pkg.featured ? 'btn--primary' : 'btn--outline'} btn--block`}>
-                Đặt Lịch
+                Đặt Mua Combo
               </a>
             </article>
           ))}

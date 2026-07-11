@@ -1,11 +1,11 @@
 import { useState } from 'react';
 
 const links = [
-  { href: '#arena', label: 'Sân Chơi' },
-  { href: '#modes', label: 'Chế Độ Chơi' },
-  { href: '#packages', label: 'Bảng Giá' },
-  { href: '#shop', label: 'Mua Xe' },
-  { href: '#contact', label: 'Đăng Ký' },
+  { href: '#how', label: 'Cách Mua' },
+  { href: '#categories', label: 'Danh Mục' },
+  { href: '#bundles', label: 'Combo' },
+  { href: '#shop', label: 'Sản Phẩm' },
+  { href: '#contact', label: 'Liên Hệ' },
 ];
 
 export default function Header() {
@@ -28,7 +28,7 @@ export default function Header() {
             </a>
           ))}
           <a href="#contact" className="btn btn--primary btn--sm" onClick={() => setOpen(false)}>
-            Đặt Lịch Chơi
+            Đặt Mua Ngay
           </a>
         </nav>
 

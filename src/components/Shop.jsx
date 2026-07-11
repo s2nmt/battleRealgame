@@ -6,11 +6,10 @@ export default function Shop() {
     <section id="shop" className="section">
       <div className="container">
         <div className="section__header">
-          <span className="section__tag">Tùy chọn</span>
-          <h2 className="section__title">Thích? Mua xe mang về</h2>
+          <span className="section__tag">Sản phẩm</span>
+          <h2 className="section__title">Xe RC đang bán</h2>
           <p className="section__desc">
-            Không bắt buộc phải mua. Nhưng nếu bạn yêu thích sau khi chơi thử tại sân, có thể đặt mua
-            xe để tập ở nhà hoặc mang đến các giải đấu.
+            Tất cả sản phẩm đều mới 100%, bảo hành 12 tháng. Liên hệ để đặt hàng hoặc hỏi tồn kho.
           </p>
         </div>
 
@@ -24,7 +23,7 @@ export default function Shop() {
               <div className="shop-card__footer">
                 <span className="shop-card__price">{formatPrice(v.price)}</span>
                 <a href="#contact" className="btn btn--outline btn--sm">
-                  Liên Hệ Mua
+                  Đặt Mua
                 </a>
               </div>
             </article>
@@ -32,7 +31,7 @@ export default function Shop() {
         </div>
 
         <p className="shop-note">
-          💡 Mẹo: Chơi thử miễn phí tại sân trước khi quyết định mua — nhân viên sẽ tư vấn mẫu phù hợp.
+          💡 Chưa chắc chọn mẫu nào? Liên hệ tư vấn miễn phí — chúng tôi giúp bạn chọn xe phù hợp ngân sách.
         </p>
       </div>
     </section>

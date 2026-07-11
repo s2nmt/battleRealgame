@@ -2,11 +2,11 @@ import { steps } from '../data/products';
 
 export default function HowItWorks() {
   return (
-    <section id="arena" className="section">
+    <section id="how" className="section">
       <div className="container">
         <div className="section__header">
-          <span className="section__tag">Cách hoạt động</span>
-          <h2 className="section__title">3 bước để vào trận</h2>
+          <span className="section__tag">Cách mua hàng</span>
+          <h2 className="section__title">3 bước để sở hữu xe RC</h2>
         </div>
 
         <div className="steps">
