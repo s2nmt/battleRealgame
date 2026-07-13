@@ -12,23 +12,23 @@ export default function Contact() {
     <section id="contact" className="section section--dark">
       <div className="container contact">
         <div className="contact__info">
-          <span className="section__tag">Đặt hàng</span>
-          <h2 className="section__title">Liên hệ đặt mua sản phẩm tự thiết kế</h2>
+          <span className="section__tag">Đăng ký sớm</span>
+          <h2 className="section__title">Nhận thông báo khi mở bán</h2>
           <p className="section__desc">
-            Điền form bên dưới — chúng tôi sẽ gọi lại tư vấn mẫu xe tăng, xe đua hoặc đồ chơi điện tử phù hợp.
+            Sản phẩm đang trong giai đoạn chuẩn bị — chưa có giá. Để lại thông tin để được báo khi chính thức mở bán.
           </p>
           <ul className="contact__perks">
-            <li>🎨 100% sản phẩm tự thiết kế, độc quyền Battle Real</li>
-            <li>🚚 Giao hàng toàn quốc trong 48h (nội thành)</li>
-            <li>🔧 Bảo hành 12 tháng, hỗ trợ kỹ thuật miễn phí</li>
+            <li>🔔 Ưu tiên nhận tin khi công bố giá & ngày mở bán</li>
+            <li>🎨 Sản phẩm do Battle Real thiết kế, độc quyền thương hiệu</li>
+            <li>🎁 Ưu đãi early bird dành cho người đăng ký sớm</li>
           </ul>
         </div>
 
         {submitted ? (
           <div className="contact__success">
             <span className="contact__success-icon">✅</span>
-            <h3>Đã nhận yêu cầu!</h3>
-            <p>Chúng tôi sẽ liên hệ trong vòng 24 giờ để xác nhận đơn hàng.</p>
+            <h3>Đã nhận đăng ký!</h3>
+            <p>Chúng tôi sẽ liên hệ khi sản phẩm sẵn sàng mở bán.</p>
           </div>
         ) : (
           <form className="contact__form" onSubmit={handleSubmit}>
@@ -47,15 +47,15 @@ export default function Contact() {
             <label>
               Bạn quan tâm
               <select name="interest" defaultValue="racing">
-                <option value="racing">Xe đua RC (tự thiết kế)</option>
-                <option value="tank">Xe tăng RC (tự thiết kế)</option>
+                <option value="racing">Xe đua RC</option>
+                <option value="tank">Xe tăng RC</option>
                 <option value="electronic">Đồ chơi điện tử</option>
-                <option value="bundle">Combo / gói tiết kiệm</option>
-                <option value="bulk">Đặt số lượng lớn</option>
+                <option value="bundle">Combo dự kiến</option>
+                <option value="all">Tất cả sản phẩm</option>
               </select>
             </label>
             <button type="submit" className="btn btn--primary btn--lg btn--block">
-              Gửi Yêu Cầu
+              Đăng Ký Nhận Tin
             </button>
           </form>
         )}

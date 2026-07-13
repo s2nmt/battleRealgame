@@ -383,6 +383,25 @@ img {
   padding: 96px 0;
 }
 
+.section--light {
+  background: var(--bg-card);
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+}
+
+.section--light .step {
+  background: var(--bg);
+  border-color: var(--border);
+}
+
+.section--surface {
+  background: var(--bg);
+  background-image:
+    linear-gradient(rgba(9, 9, 11, 0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(9, 9, 11, 0.04) 1px, transparent 1px);
+  background-size: 40px 40px;
+}
+
 .section--dark {
   background: var(--bg-dark);
   color: #a1a1aa;
@@ -812,11 +831,21 @@ img {
   padding-bottom: 22px;
 }
 
-.shop-card__price {
-  font-family: var(--font-display);
+.shop-card__status {
+  font-size: 14px;
   font-weight: 700;
-  color: var(--text-bright);
-  font-size: 18px;
+  color: var(--text);
+  font-style: italic;
+}
+
+.package-card__amount--soon {
+  font-size: 22px;
+  color: var(--accent);
+  font-style: italic;
+}
+
+.section--dark .package-card__amount--soon {
+  color: var(--accent);
 }
 
 .shop-note {

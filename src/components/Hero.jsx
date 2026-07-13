@@ -19,10 +19,10 @@ export default function Hero() {
 
         <div className="hero__actions">
           <a href="#shop" className="btn btn--primary btn--lg">
-            Xem Sản Phẩm
+            Xem Sản Phẩm Sắp Ra Mắt
           </a>
-          <a href="#how" className="btn btn--outline btn--lg">
-            Quy Trình Thiết Kế
+          <a href="#contact" className="btn btn--outline btn--lg">
+            Đăng Ký Nhận Tin
           </a>
         </div>
 

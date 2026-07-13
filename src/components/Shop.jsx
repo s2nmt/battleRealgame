@@ -1,16 +1,14 @@
-import { products } from '../data/products';
-import { formatPrice } from '../utils/formatPrice';
+import { products, storeInfo } from '../data/products';
 
 export default function Shop() {
   return (
     <section id="shop" className="section">
       <div className="container">
         <div className="section__header">
-          <span className="section__tag">Sản phẩm tự thiết kế</span>
+          <span className="section__tag">Sản phẩm Battle Real</span>
           <h2 className="section__title">Mẫu xe & đồ chơi điện tử</h2>
           <p className="section__desc">
-            Mỗi sản phẩm mang thương hiệu Battle Real — thiết kế riêng, không có trên thị trường.
-            Liên hệ để đặt hàng hoặc hỏi tồn kho.
+            Đây là các mẫu đang chuẩn bị ra mắt — chưa có giá chính thức. Đăng ký để nhận thông báo khi mở bán.
           </p>
         </div>
 
@@ -23,9 +21,9 @@ export default function Shop() {
               <h3 className="shop-card__name">{p.name}</h3>
               <p className="shop-card__desc">{p.description}</p>
               <div className="shop-card__footer">
-                <span className="shop-card__price">{formatPrice(p.price)}</span>
+                <span className="shop-card__status">{storeInfo.comingSoonLabel}</span>
                 <a href="#contact" className="btn btn--outline btn--sm">
-                  Đặt Mua
+                  Đăng Ký Quan Tâm
                 </a>
               </div>
             </article>
@@ -33,7 +31,7 @@ export default function Shop() {
         </div>
 
         <p className="shop-note">
-          🎨 Tất cả sản phẩm 100% tự thiết kế — cần tư vấn chọn mẫu hoặc đặt hàng số lượng lớn? Liên hệ ngay.
+          🔔 Giá và thời gian giao hàng sẽ được công bố khi chính thức mở bán — đăng ký sớm để được ưu tiên.
         </p>
       </div>
     </section>

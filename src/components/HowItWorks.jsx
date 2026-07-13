@@ -2,13 +2,13 @@ import { steps } from '../data/products';
 
 export default function HowItWorks() {
   return (
-    <section id="how" className="section">
+    <section id="how" className="section section--light">
       <div className="container">
         <div className="section__header">
           <span className="section__tag">Quy trình sản xuất</span>
           <h2 className="section__title">Từ ý tưởng đến thành phẩm</h2>
           <p className="section__desc">
-            Không mua thiết kế có sẵn — mọi sản phẩm Battle Real đều trải qua quy trình tự phát triển hoàn toàn.
+            Không mua thiết kế có sẵn — mọi sản phẩm do chúng tôi thiết kế và phát triển từ đầu.
           </p>
         </div>
 

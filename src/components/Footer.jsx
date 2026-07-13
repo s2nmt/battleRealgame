@@ -6,15 +6,15 @@ export default function Footer() {
           <span className="logo__text">
             Battle<span className="logo__accent">Real</span>
           </span>
-          <p>Xe tăng, xe đua & đồ chơi điện tử — 100% tự thiết kế tại Việt Nam</p>
+          <p>Xe tăng, xe đua & đồ chơi điện tử do chúng tôi thiết kế — Đang chuẩn bị mở bán</p>
         </div>
         <div className="footer__links">
           <a href="#categories">Danh mục</a>
           <a href="#shop">Sản phẩm</a>
-          <a href="#how">Tự thiết kế</a>
+          <a href="#how">Thiết kế</a>
           <a href="#contact">Liên hệ</a>
         </div>
-        <p className="footer__copy">© 2026 Battle Real. Tự thiết kế — Tự sản xuất — Bảo hành 12 tháng.</p>
+        <p className="footer__copy">© 2026 Battle Real. Chúng tôi thiết kế — Đang chuẩn bị mở bán.</p>
       </div>
     </footer>
   );

@@ -3,7 +3,7 @@ import { useState } from 'react';
 const links = [
   { href: '#categories', label: 'Danh Mục' },
   { href: '#shop', label: 'Sản Phẩm' },
-  { href: '#how', label: 'Tự Thiết Kế' },
+  { href: '#how', label: 'Thiết Kế' },
   { href: '#bundles', label: 'Combo' },
   { href: '#contact', label: 'Liên Hệ' },
 ];
@@ -28,7 +28,7 @@ export default function Header() {
             </a>
           ))}
           <a href="#contact" className="btn btn--primary btn--sm" onClick={() => setOpen(false)}>
-            Đặt Mua Ngay
+            Đăng Ký Sớm
           </a>
         </nav>
 
