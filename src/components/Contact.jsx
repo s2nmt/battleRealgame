@@ -13,14 +13,14 @@ export default function Contact() {
       <div className="container contact">
         <div className="contact__info">
           <span className="section__tag">Đặt hàng</span>
-          <h2 className="section__title">Liên hệ để đặt mua xe RC</h2>
+          <h2 className="section__title">Liên hệ đặt mua sản phẩm tự thiết kế</h2>
           <p className="section__desc">
-            Điền form bên dưới, chúng tôi sẽ gọi lại xác nhận đơn hàng, tư vấn mẫu xe và báo thời gian giao hàng.
+            Điền form bên dưới — chúng tôi sẽ gọi lại tư vấn mẫu xe tăng, xe đua hoặc đồ chơi điện tử phù hợp.
           </p>
           <ul className="contact__perks">
+            <li>🎨 100% sản phẩm tự thiết kế, độc quyền Battle Real</li>
             <li>🚚 Giao hàng toàn quốc trong 48h (nội thành)</li>
-            <li>🔧 Bảo hành 12 tháng chính hãng</li>
-            <li>💬 Tư vấn miễn phí, không mua vẫn được hỗ trợ</li>
+            <li>🔧 Bảo hành 12 tháng, hỗ trợ kỹ thuật miễn phí</li>
           </ul>
         </div>
 
@@ -47,11 +47,11 @@ export default function Contact() {
             <label>
               Bạn quan tâm
               <select name="interest" defaultValue="racing">
-                <option value="racing">Xe đua RC</option>
-                <option value="tank">Xe tăng RC</option>
-                <option value="combat">Xe chiến đấu</option>
+                <option value="racing">Xe đua RC (tự thiết kế)</option>
+                <option value="tank">Xe tăng RC (tự thiết kế)</option>
+                <option value="electronic">Đồ chơi điện tử</option>
                 <option value="bundle">Combo / gói tiết kiệm</option>
-                <option value="advice">Cần tư vấn chọn xe</option>
+                <option value="bulk">Đặt số lượng lớn</option>
               </select>
             </label>
             <button type="submit" className="btn btn--primary btn--lg btn--block">

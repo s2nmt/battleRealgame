@@ -7,13 +7,12 @@ export default function Hero() {
       <div className="container hero__inner">
         <div className="hero__badge">
           <span className="pulse" />
-          {storeInfo.status} — Giao hàng toàn quốc
+          {storeInfo.status}
         </div>
 
         <h1 className="hero__title">
-          xe điều khiển
-          <br />
-          <span className="hero__highlight">từ xa RC</span>
+          Xe tăng, xe đua
+          <span className="hero__highlight"> & đồ chơi điện tử</span>
         </h1>
 
         <p className="hero__desc">{storeInfo.description}</p>
@@ -22,8 +21,8 @@ export default function Hero() {
           <a href="#shop" className="btn btn--primary btn--lg">
             Xem Sản Phẩm
           </a>
-          <a href="#contact" className="btn btn--outline btn--lg">
-            Liên Hệ Mua Hàng
+          <a href="#how" className="btn btn--outline btn--lg">
+            Quy Trình Thiết Kế
           </a>
         </div>
 
@@ -38,11 +37,10 @@ export default function Hero() {
       </div>
 
       <div className="hero__visual" aria-hidden="true">
-        <div className="hero__arena">
-          <div className="hero__track" />
-          <span className="hero__vehicle hero__vehicle--1">🏎️</span>
-          <span className="hero__vehicle hero__vehicle--2">🛡️</span>
-          <span className="hero__vehicle hero__vehicle--3">📦</span>
+        <div className="hero__showcase">
+          <div className="showcase-card showcase-card--1">🏎️</div>
+          <div className="showcase-card showcase-card--2">🛡️</div>
+          <div className="showcase-card showcase-card--3">⚡</div>
         </div>
       </div>
     </section>

@@ -7,9 +7,9 @@ export default function Packages() {
       <div className="container">
         <div className="section__header">
           <span className="section__tag">Combo tiết kiệm</span>
-          <h2 className="section__title">Mua combo — giá tốt hơn mua lẻ</h2>
+          <h2 className="section__title">Gói sản phẩm tự thiết kế</h2>
           <p className="section__desc">
-            Các gói combo đã bao gồm phụ kiện cần thiết. Tiết kiệm chi phí và sẵn sàng chơi ngay khi nhận hàng.
+            Mua combo xe đua, xe tăng hoặc đồ chơi điện tử — giá tốt hơn mua lẻ, kèm phụ kiện và bảo hành.
           </p>
         </div>
 
@@ -23,7 +23,7 @@ export default function Packages() {
               <h3 className="package-card__name">{pkg.name}</h3>
               <div className="package-card__price">
                 <span className="package-card__amount">{formatPrice(pkg.price)}</span>
-                <span className="package-card__duration">/ {pkg.duration}</span>
+                <span className="package-card__duration">/ {pkg.unit}</span>
               </div>
               <p className="package-card__desc">{pkg.description}</p>
               <ul className="package-card__list">

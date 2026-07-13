@@ -1,4 +1,4 @@
-import { vehicles } from '../data/products';
+import { products } from '../data/products';
 import { formatPrice } from '../utils/formatPrice';
 
 export default function Shop() {
@@ -6,22 +6,24 @@ export default function Shop() {
     <section id="shop" className="section">
       <div className="container">
         <div className="section__header">
-          <span className="section__tag">Sản phẩm</span>
-          <h2 className="section__title">Xe RC đang bán</h2>
+          <span className="section__tag">Sản phẩm tự thiết kế</span>
+          <h2 className="section__title">Mẫu xe & đồ chơi điện tử</h2>
           <p className="section__desc">
-            Tất cả sản phẩm đều mới 100%, bảo hành 12 tháng. Liên hệ để đặt hàng hoặc hỏi tồn kho.
+            Mỗi sản phẩm mang thương hiệu Battle Real — thiết kế riêng, không có trên thị trường.
+            Liên hệ để đặt hàng hoặc hỏi tồn kho.
           </p>
         </div>
 
         <div className="shop-grid">
-          {vehicles.map((v) => (
-            <article key={v.id} className="shop-card">
-              <div className="shop-card__icon">{v.icon}</div>
-              <span className="shop-card__category">{v.category}</span>
-              <h3 className="shop-card__name">{v.name}</h3>
-              <p className="shop-card__desc">{v.description}</p>
+          {products.map((p) => (
+            <article key={p.id} className="shop-card">
+              {p.badge && <span className="shop-card__badge">{p.badge}</span>}
+              <div className="shop-card__icon">{p.icon}</div>
+              <span className="shop-card__category">{p.category}</span>
+              <h3 className="shop-card__name">{p.name}</h3>
+              <p className="shop-card__desc">{p.description}</p>
               <div className="shop-card__footer">
-                <span className="shop-card__price">{formatPrice(v.price)}</span>
+                <span className="shop-card__price">{formatPrice(p.price)}</span>
                 <a href="#contact" className="btn btn--outline btn--sm">
                   Đặt Mua
                 </a>
@@ -31,7 +33,7 @@ export default function Shop() {
         </div>
 
         <p className="shop-note">
-          💡 Chưa chắc chọn mẫu nào? Liên hệ tư vấn miễn phí — chúng tôi giúp bạn chọn xe phù hợp ngân sách.
+          🎨 Tất cả sản phẩm 100% tự thiết kế — cần tư vấn chọn mẫu hoặc đặt hàng số lượng lớn? Liên hệ ngay.
         </p>
       </div>
     </section>

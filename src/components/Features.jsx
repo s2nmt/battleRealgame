@@ -4,6 +4,10 @@ export default function Features() {
   return (
     <section className="section section--accent">
       <div className="container">
+        <div className="section__header">
+          <span className="section__tag">Tại sao Battle Real</span>
+          <h2 className="section__title">Sản phẩm tự thiết kế — Không giống ai</h2>
+        </div>
         <div className="features-grid">
           {features.map((f) => (
             <div key={f.title} className="feature">

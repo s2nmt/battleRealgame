@@ -1,10 +1,10 @@
 import { useState } from 'react';
 
 const links = [
-  { href: '#how', label: 'Cách Mua' },
   { href: '#categories', label: 'Danh Mục' },
-  { href: '#bundles', label: 'Combo' },
   { href: '#shop', label: 'Sản Phẩm' },
+  { href: '#how', label: 'Tự Thiết Kế' },
+  { href: '#bundles', label: 'Combo' },
   { href: '#contact', label: 'Liên Hệ' },
 ];
 
@@ -15,7 +15,7 @@ export default function Header() {
     <header className="header">
       <div className="container header__inner">
         <a href="#" className="logo">
-          <span className="logo__bolt">⚡</span>
+          <span className="logo__bolt">BR</span>
           <span className="logo__text">
             Battle<span className="logo__accent">Real</span>
           </span>
