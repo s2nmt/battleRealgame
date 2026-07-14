@@ -8,7 +8,7 @@ export default function GameModes() {
           <span className="section__tag">3 dòng sản phẩm chính</span>
           <h2 className="section__title">Xe tăng — Xe đua — Điện tử</h2>
           <p className="section__desc">
-            Tất cả đều do Battle Real thiết kế và sản xuất. Không bán hàng nhập sẵn, không OEM —
+            Tất cả đều do RoVi thiết kế và sản xuất. Không bán hàng nhập sẵn, không OEM —
             mỗi mẫu là sản phẩm độc quyền của chúng tôi.
           </p>
         </div>

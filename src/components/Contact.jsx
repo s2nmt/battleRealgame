@@ -19,7 +19,7 @@ export default function Contact() {
           </p>
           <ul className="contact__perks">
             <li>🔔 Ưu tiên nhận tin khi công bố giá & ngày mở bán</li>
-            <li>🎨 Sản phẩm do Battle Real thiết kế, độc quyền thương hiệu</li>
+            <li>🎨 Sản phẩm do RoVi thiết kế, độc quyền thương hiệu</li>
             <li>🎁 Ưu đãi early bird dành cho người đăng ký sớm</li>
           </ul>
         </div>

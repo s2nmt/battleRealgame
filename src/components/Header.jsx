@@ -15,9 +15,9 @@ export default function Header() {
     <header className="header">
       <div className="container header__inner">
         <a href="#" className="logo">
-          <span className="logo__bolt">BR</span>
+          <span className="logo__bolt">RV</span>
           <span className="logo__text">
-            Battle<span className="logo__accent">Real</span>
+            Ro<span className="logo__accent">Vi</span>
           </span>
         </a>
 

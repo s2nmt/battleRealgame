@@ -5,7 +5,7 @@ export default function Shop() {
     <section id="shop" className="section">
       <div className="container">
         <div className="section__header">
-          <span className="section__tag">Sản phẩm Battle Real</span>
+          <span className="section__tag">Sản phẩm RoVi</span>
           <h2 className="section__title">Mẫu xe & đồ chơi điện tử</h2>
           <p className="section__desc">
             Đây là các mẫu đang chuẩn bị ra mắt — chưa có giá chính thức. Đăng ký để nhận thông báo khi mở bán.
