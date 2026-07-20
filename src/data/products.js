@@ -1,12 +1,14 @@
 export const storeInfo = {
-  name: 'RoVi',
+  name: 'Robovix Studio',
   tagline: 'Chúng tôi thiết kế — Sản xuất — Sắp mở bán',
   status: 'Đang chuẩn bị mở bán',
   comingSoonLabel: 'Sắp mở bán',
+  headline: 'Let\'s build',
+  headlineAccent: 'something amazing',
   description:
-    'Chúng tôi đang hoàn thiện các mẫu xe tăng RC, xe đua RC và đồ chơi điện tử do đội ngũ RoVi thiết kế. Website giới thiệu sản phẩm — giá và đặt hàng sẽ được công bố khi chính thức mở bán.',
+    'Xe tăng RC, xe đua RC, robot và đồ chơi điện tử do Robovix Studio thiết kế từ ý tưởng đến thành phẩm. Sắp mở bán — đăng ký để nhận tin sớm.',
   highlights: [
-    { value: 'RoVi', label: 'Chúng tôi thiết kế' },
+    { value: 'Robovix', label: 'Chúng tôi thiết kế' },
     { value: '12+', label: 'Mẫu độc quyền' },
     { value: 'Sắp', label: 'Ra mắt' },
     { value: 'Đăng ký', label: 'Nhận tin sớm' },
@@ -19,7 +21,7 @@ export const categories = [
     icon: '🏎️',
     title: 'Xe Đua RC',
     description:
-      'Xe đua tốc độ cao, drift, FPV — khung gầm, động cơ và vỏ xe do chúng tôi thiết kế, không copy mẫu ngoài.',
+      'Xe đua tốc độ cao, drift, FPV — khung gầm, động cơ và vỏ xe do chúng tôi thiết kế, có tham khảo các mẫu mô hình trên thế giới.',
     tag: 'Sắp mở bán',
   },
   {
@@ -47,7 +49,7 @@ export const bundles = [
     unit: '1 xe + phụ kiện',
     badge: 'Dự kiến',
     description: 'Xe đua RC do chúng tôi thiết kế, kèm pin LiPo, sạc nhanh và tay cầm 2.4GHz.',
-    includes: ['Xe đua RoVi R1', 'Pin + sạc LiPo', 'Tay cầm 2.4GHz', 'Bảo hành dự kiến'],
+    includes: ['Xe đua Robovix R1', 'Pin + sạc LiPo', 'Tay cầm 2.4GHz', 'Bảo hành dự kiến'],
   },
   {
     id: 'tank-kit',
@@ -55,7 +57,7 @@ export const bundles = [
     unit: '1 xe + phụ kiện',
     badge: 'Dự kiến',
     description: 'Xe tăng do chúng tôi thiết kế với hệ thống bắn đạn nước, tháp pháo servo độc quyền.',
-    includes: ['Xe tăng RoVi T1', 'Bình nước + đạn', 'Pin sạc USB-C', 'Hướng dẫn tiếng Việt'],
+    includes: ['Xe tăng Robovix T1', 'Bình nước + đạn', 'Pin sạc USB-C', 'Hướng dẫn tiếng Việt'],
     featured: true,
   },
   {
@@ -64,7 +66,7 @@ export const bundles = [
     unit: '2 xe + sân mini',
     badge: 'Dự kiến',
     description: '2 xe (đua hoặc tăng) + sân đấu mini gập — do chúng tôi thiết kế cho chơi đối kháng tại nhà.',
-    includes: ['2 xe RoVi', 'Sân đấu mini gập', 'Pin dự phòng', 'Bảo hành dự kiến'],
+    includes: ['2 xe Robovix', 'Sân đấu mini gập', 'Pin dự phòng', 'Bảo hành dự kiến'],
   },
   {
     id: 'electronic-kit',
@@ -72,7 +74,7 @@ export const bundles = [
     unit: '3 sản phẩm',
     badge: 'Dự kiến',
     description: 'Bộ đồ chơi điện tử do chúng tôi thiết kế: robot mini, mạch LED và bộ lắp ráp cơ bản.',
-    includes: ['Robot mini RoVi-Bot', 'Bộ mạch LED thử nghiệm', 'Hướng dẫn lắp ráp', 'Hỗ trợ kỹ thuật'],
+    includes: ['Robot mini Robovix-Bot', 'Bộ mạch LED thử nghiệm', 'Hướng dẫn lắp ráp', 'Hỗ trợ kỹ thuật'],
   },
 ];
 
@@ -82,7 +84,7 @@ export const steps = [
     icon: '✏️',
     title: 'Chúng Tôi Thiết Kế',
     description:
-      'Mỗi sản phẩm bắt đầu từ bản vẽ và mô hình 3D do đội ngũ RoVi phát triển. Không mua thiết kế có sẵn, không OEM.',
+      'Mỗi sản phẩm bắt đầu từ bản vẽ và mô hình 3D do đội ngũ Robovix Studio phát triển. Không mua thiết kế có sẵn, không OEM.',
   },
   {
     step: '02',
@@ -103,7 +105,7 @@ export const steps = [
 export const features = [
   {
     icon: '🎨',
-    title: 'Thiết Kế Bởi RoVi',
+    title: 'Thiết Kế Bởi Robovix Studio',
     description: 'Từ ý tưởng, bản vẽ 3D, mạch điện tử đến vỏ xe — tất cả do đội ngũ chúng tôi phát triển.',
   },
   {
@@ -126,15 +128,15 @@ export const features = [
 export const products = [
   {
     id: 1,
-    name: 'RoVi R1 — Xe Đua FPV',
+    name: 'Robovix R1 — Xe Đua FPV',
     category: 'Xe Đua RC',
     description: 'Xe đua FPV 1080p, tốc độ 50km/h. Khung nhôm do chúng tôi thiết kế, động cơ brushless riêng.',
     icon: '🏎️',
-    badge: 'RoVi Design',
+    badge: 'Robovix Design',
   },
   {
     id: 2,
-    name: 'RoVi T1 — Xe Tăng',
+    name: 'Robovix T1 — Xe Tăng',
     category: 'Xe Tăng RC',
     description: 'Xe tăng bắn đạn nước, tháp pháo servo 360°. Cơ cấu bắn và vỏ thép do team chúng tôi phát triển.',
     icon: '🛡️',
@@ -142,31 +144,31 @@ export const products = [
   },
   {
     id: 3,
-    name: 'RoVi D1 — Drift Racer',
+    name: 'Robovix D1 — Drift Racer',
     category: 'Xe Đua RC',
     description: 'Xe drift nhẹ, lốp chuyên dụng, khung gầm thấp do chúng tôi thiết kế cho người mới bắt đầu.',
     icon: '🏁',
-    badge: 'RoVi Design',
+    badge: 'Robovix Design',
   },
   {
     id: 4,
-    name: 'RoVi T2 — Xe Tăng Hạng Nặng',
+    name: 'Robovix T2 — Xe Tăng Hạng Nặng',
     category: 'Xe Tăng RC',
-    description: 'Bản nâng cấp với giáp dày, bình nước lớn, động cơ kép. Thiết kế riêng của RoVi cho địa hình khó.',
+    description: 'Bản nâng cấp với giáp dày, bình nước lớn, động cơ kép. Thiết kế riêng của Robovix Studio cho địa hình khó.',
     icon: '⚔️',
     badge: 'Mới',
   },
   {
     id: 5,
-    name: 'RoVi-Bot Mini — Robot Điện Tử',
+    name: 'Robovix-Bot Mini — Robot Điện Tử',
     category: 'Đồ Chơi Điện Tử',
     description: 'Robot mini điều khiển Bluetooth, mạch và firmware do chúng tôi viết. Lập trình được qua app.',
     icon: '🤖',
-    badge: 'RoVi Design',
+    badge: 'Robovix Design',
   },
   {
     id: 6,
-    name: 'RoVi-Transform — Xe Biến Hình',
+    name: 'Robovix-Transform — Xe Biến Hình',
     category: 'Đồ Chơi Điện Tử',
     description: 'Xe biến hình thành robot, khớp nối và mạch điều khiển do đội ngũ chúng tôi thiết kế.',
     icon: '🔄',
@@ -174,7 +176,7 @@ export const products = [
   },
   {
     id: 7,
-    name: 'RoVi R2 — Xe Đua Pro',
+    name: 'Robovix R2 — Xe Đua Pro',
     category: 'Xe Đua RC',
     description: 'Bản pro với carbon fiber, ESC tự tune, camera FPV 60fps. Dành cho tay đua nghiêm túc.',
     icon: '📹',
@@ -182,7 +184,7 @@ export const products = [
   },
   {
     id: 8,
-    name: 'RoVi-Circuit Kit — Bộ Mạch Thử Nghiệm',
+    name: 'Robovix-Circuit Kit — Bộ Mạch Thử Nghiệm',
     category: 'Đồ Chơi Điện Tử',
     description: 'Bộ mạch LED, cảm biến và module điều khiển do chúng tôi thiết kế — dành cho bé yêu công nghệ.',
     icon: '💡',

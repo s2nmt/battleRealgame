@@ -11,8 +11,8 @@ export default function Hero() {
         </div>
 
         <h1 className="hero__title">
-          Xe tăng, xe đua
-          <span className="hero__highlight"> & đồ chơi điện tử</span>
+          <span className="hero__title-line">{storeInfo.headline}</span>
+          <span className="hero__title-line hero__highlight">{storeInfo.headlineAccent}</span>
         </h1>
 
         <p className="hero__desc">{storeInfo.description}</p>

@@ -15,9 +15,9 @@ export default function Header() {
     <header className="header">
       <div className="container header__inner">
         <a href="#" className="logo">
-          <span className="logo__bolt">RV</span>
+          <img src="/favicon.svg" alt="" className="logo__icon" width="36" height="36" />
           <span className="logo__text">
-            Ro<span className="logo__accent">Vi</span>
+            Robovix <span className="logo__accent">Studio</span>
           </span>
         </a>
 

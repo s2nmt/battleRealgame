@@ -5,7 +5,7 @@ export default function Features() {
     <section className="section section--accent">
       <div className="container">
         <div className="section__header">
-          <span className="section__tag">Tại sao RoVi</span>
+          <span className="section__tag">Tại sao Robovix Studio</span>
           <h2 className="section__title">Sản phẩm tự thiết kế — Không giống ai</h2>
         </div>
         <div className="features-grid">
