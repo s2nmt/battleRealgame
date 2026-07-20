@@ -6,7 +6,7 @@ export default function GameModes() {
       <div className="container">
         <div className="section__header">
           <span className="section__tag">3 dòng sản phẩm chính</span>
-          <h2 className="section__title">Xe tăng — Xe đua — Điện tử</h2>
+          <h2 className="section__title">Xe tăng — Xe đua — Robot</h2>
           <p className="section__desc">
             Tất cả đều do Robovix Studio thiết kế và sản xuất. Không bán hàng nhập sẵn, không OEM —
             mỗi mẫu là sản phẩm độc quyền của chúng tôi.
