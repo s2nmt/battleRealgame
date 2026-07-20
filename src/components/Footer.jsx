@@ -3,12 +3,13 @@ export default function Footer() {
     <footer className="footer">
       <div className="container footer__inner">
         <div className="footer__brand">
-          <span className="logo">
-            <img src="/favicon.svg" alt="" className="logo__icon" width="36" height="36" />
-            <span className="logo__text">
-              Robovix <span className="logo__accent">Studio</span>
-            </span>
-          </span>
+          <img
+            src="/logo.png"
+            alt="Robovix Studio"
+            className="footer__logo"
+            width="168"
+            height="168"
+          />
           <p>Xe tăng, xe đua & đồ chơi điện tử do chúng tôi thiết kế — Đang chuẩn bị mở bán</p>
         </div>
         <div className="footer__links">

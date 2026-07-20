@@ -37,11 +37,13 @@ export default function Hero() {
       </div>
 
       <div className="hero__visual" aria-hidden="true">
-        <div className="hero__showcase">
-          <div className="showcase-card showcase-card--1">🏎️</div>
-          <div className="showcase-card showcase-card--2">🛡️</div>
-          <div className="showcase-card showcase-card--3">⚡</div>
-        </div>
+        <img
+          src="/logo.png"
+          alt=""
+          className="hero__mascot"
+          width="360"
+          height="360"
+        />
       </div>
     </section>
   );
