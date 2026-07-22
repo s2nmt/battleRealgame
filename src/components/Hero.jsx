@@ -38,11 +38,11 @@ export default function Hero() {
 
       <div className="hero__visual" aria-hidden="true">
         <img
-          src="/logo.png"
+          src="/logo-robot.png"
           alt=""
           className="hero__mascot"
           width="360"
-          height="360"
+          height="240"
         />
       </div>
     </section>

@@ -4,11 +4,11 @@ export default function Footer() {
       <div className="container footer__inner">
         <div className="footer__brand">
           <img
-            src="/logo.png"
+            src="/logo-wordmark.png"
             alt="Robovix Studio"
             className="footer__logo"
-            width="168"
-            height="168"
+            width="200"
+            height="60"
           />
           <p>Xe tăng, xe đua & đồ chơi điện tử do chúng tôi thiết kế — Đang chuẩn bị mở bán</p>
         </div>
