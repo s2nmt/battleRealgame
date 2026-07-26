@@ -109,7 +109,7 @@ export const features = [
     description: 'Từ ý tưởng, bản vẽ 3D, mạch điện tử đến vỏ xe — tất cả do đội ngũ chúng tôi phát triển.',
   },
   {
-    icon: '🇻🇳',
+    icon: 'vn-flag',
     title: 'Sản Xuất Tại Việt Nam',
     description: 'Thiết kế và lắp ráp tại Việt Nam, kiểm soát chất lượng từng khâu trước khi đưa ra thị trường.',
   },

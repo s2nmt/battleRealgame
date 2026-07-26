@@ -655,6 +655,17 @@ img {
   font-size: 36px;
   display: block;
   margin-bottom: 14px;
+  line-height: 1;
+}
+
+.feature__icon--svg {
+  display: flex;
+  justify-content: center;
+}
+
+.feature__icon--svg svg {
+  display: block;
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.18));
 }
 
 .feature__title {
