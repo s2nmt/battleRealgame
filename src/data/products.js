@@ -127,6 +127,19 @@ export const features = [
 
 export const products = [
   {
+    id: 9,
+    name: 'Robovix Sherman — Xe Tăng M4',
+    category: 'Xe Tăng RC',
+    description:
+      'Mô hình xe tăng Sherman M4 in 3D chi tiết, tháp pháo dài Firefly. Thiết kế và hoàn thiện bởi Robovix Studio.',
+    icon: '🛡️',
+    badge: 'Mới',
+    images: [
+      '/products/tank_sherman/front_tank.png',
+      '/products/tank_sherman/right_tank.png',
+    ],
+  },
+  {
     id: 1,
     name: 'Robovix R1 — Xe Đua FPV',
     category: 'Xe Đua RC',
