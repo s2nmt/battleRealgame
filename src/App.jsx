@@ -1,7 +1,6 @@
 import Header from './components/Header';
 import Hero from './components/Hero';
 import HowItWorks from './components/HowItWorks';
-import GameModes from './components/GameModes';
 import Features from './components/Features';
 import Packages from './components/Packages';
 import Shop from './components/Shop';
@@ -14,11 +13,10 @@ export default function App() {
       <Header />
       <main>
         <Hero />
-        <HowItWorks />
-        <GameModes />
-        <Features />
-        <Packages />
         <Shop />
+        <Packages />
+        <HowItWorks />
+        <Features />
         <Contact />
       </main>
       <Footer />

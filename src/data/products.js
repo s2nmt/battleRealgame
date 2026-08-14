@@ -1,15 +1,15 @@
 export const storeInfo = {
   name: 'Robovix Studio',
-  tagline: 'Chúng tôi thiết kế — Sản xuất — Sắp mở bán',
+  tagline: 'Thiết kế — Chỉnh sửa — Hoàn thiện',
   status: 'Đang chuẩn bị mở bán',
   comingSoonLabel: 'Sắp mở bán',
   headline: 'Let\'s build',
   headlineAccent: 'something amazing',
   description:
-    'Xe tăng RC, xe đua RC, robot và đồ chơi điện tử do Robovix Studio thiết kế từ ý tưởng đến thành phẩm. Sắp mở bán — đăng ký để nhận tin sớm.',
+    'Xe tăng RC, xe đua RC, robot và đồ chơi điện tử do Robovix Studio thiết kế, chỉnh sửa và hoàn thiện. Sắp mở bán — đăng ký để nhận tin sớm.',
   highlights: [
-    { value: 'Robovix', label: 'Chúng tôi thiết kế' },
-    { value: '12+', label: 'Mẫu độc quyền' },
+    { value: 'Robovix', label: 'Thiết kế & hoàn thiện' },
+    { value: '12+', label: 'Mẫu đang phát triển' },
     { value: 'Sắp', label: 'Ra mắt' },
     { value: 'Đăng ký', label: 'Nhận tin sớm' },
   ],
@@ -21,7 +21,7 @@ export const categories = [
     icon: '🏎️',
     title: 'Xe Đua RC',
     description:
-      'Xe đua tốc độ cao, drift, FPV — khung gầm, động cơ và vỏ xe do chúng tôi thiết kế, có tham khảo các mẫu mô hình trên thế giới.',
+      'Xe đua tốc độ cao, drift, FPV — khung gầm, động cơ và vỏ xe do chúng tôi thiết kế, chỉnh sửa và hoàn thiện.',
     tag: 'Sắp mở bán',
   },
   {
@@ -29,7 +29,7 @@ export const categories = [
     icon: '🛡️',
     title: 'Xe Tăng RC',
     description:
-      'Xe tăng mini tháp pháo xoay 360°, bắn đạn nước. Cơ cấu tháp pháo và hệ thống bắn do đội ngũ chúng tôi phát triển.',
+      'Xe tăng mini tháp pháo xoay 360°, bắn đạn nước. Cơ cấu tháp pháo và hệ thống bắn do chúng tôi thiết kế, chỉnh sửa và hoàn thiện.',
     tag: 'Sắp mở bán',
   },
   {
@@ -37,7 +37,7 @@ export const categories = [
     icon: '⚡',
     title: 'Đồ Chơi Điện Tử',
     description:
-      'Robot điều khiển, xe biến hình, mạch điện tử tích hợp — board và firmware do chúng tôi thiết kế.',
+      'Robot điều khiển, xe biến hình, mạch điện tử tích hợp — board và firmware do chúng tôi thiết kế, chỉnh sửa và hoàn thiện.',
     tag: 'Sắp mở bán',
   },
 ];
@@ -82,23 +82,44 @@ export const steps = [
   {
     step: '01',
     icon: '✏️',
-    title: 'Chúng Tôi Thiết Kế',
+    title: 'Thiết Kế',
     description:
-      'Mỗi sản phẩm bắt đầu từ bản vẽ và mô hình 3D do đội ngũ Robovix Studio phát triển. Không mua thiết kế có sẵn, không OEM.',
+      'Hình thành ý tưởng, chỉnh sửa và hoàn thiện định hướng sản phẩm trước khi triển khai chi tiết.',
   },
   {
     step: '02',
-    icon: '🔧',
-    title: 'Sản Xuất & Lắp Ráp',
+    icon: '⚙️',
+    title: 'Thiết Kế Cơ Khí',
     description:
-      'Gia công khung, lắp mạch điện tử, lập trình firmware và kiểm tra chất lượng từng chiếc trước khi xuất xưởng.',
+      'Bản vẽ 3D, khung gầm, vỏ xe và cơ cấu chuyển động — thiết kế, chỉnh sửa cho từng sản phẩm.',
   },
   {
     step: '03',
-    icon: '🚀',
-    title: 'Sắp Mở Bán',
+    icon: 'pcb',
+    title: 'Thiết Kế Mạch Điện',
     description:
-      'Đang hoàn thiện sản phẩm và chuẩn bị mở bán. Đăng ký để nhận thông báo khi có giá và ngày ra mắt.',
+      'Sơ đồ mạch, PCB, cảm biến và hệ thống nguồn — thiết kế, chỉnh sửa để chạy ổn định trên sản phẩm thật.',
+  },
+  {
+    step: '04',
+    icon: 'chip',
+    title: 'Phát Triển Phần Mềm',
+    description:
+      'Firmware, điều khiển và ứng dụng — lập trình, chỉnh sửa và hoàn thiện để sản phẩm hoạt động đúng ý.',
+  },
+  {
+    step: '05',
+    icon: '🔧',
+    title: 'Lắp Ráp',
+    description:
+      'Gia công khung, lắp mạch điện tử, nạp phần mềm và kiểm tra chất lượng từng chiếc trước khi xuất xưởng.',
+  },
+  {
+    step: '06',
+    icon: '🚀',
+    title: 'Ra Mắt Sản Phẩm',
+    description:
+      'Hoàn thiện sản phẩm và chuẩn bị mở bán. Đăng ký để nhận thông báo khi có giá và ngày ra mắt.',
   },
 ];
 
@@ -106,7 +127,8 @@ export const features = [
   {
     icon: '🎨',
     title: 'Thiết Kế Bởi Robovix Studio',
-    description: 'Từ ý tưởng, bản vẽ 3D, mạch điện tử đến vỏ xe — tất cả do đội ngũ chúng tôi phát triển.',
+    description:
+      'Từ bản vẽ 3D, mạch điện tử đến vỏ xe — chúng tôi thiết kế, chỉnh sửa và hoàn thiện từng sản phẩm.',
   },
   {
     icon: 'vn-flag',
@@ -115,8 +137,9 @@ export const features = [
   },
   {
     icon: '⚙️',
-    title: 'Công Nghệ Riêng',
-    description: 'Firmware, cơ cấu tháp pháo, hệ thống bắn và khung gầm — đều do chúng tôi nghiên cứu và phát triển.',
+    title: 'Công Nghệ Tùy Biến',
+    description:
+      'Firmware, cơ cấu tháp pháo, hệ thống bắn và khung gầm được thiết kế, chỉnh sửa cho từng sản phẩm.',
   },
   {
     icon: '🔔',
@@ -128,12 +151,13 @@ export const features = [
 export const products = [
   {
     id: 9,
-    name: 'Robovix Sherman — Xe Tăng M4',
+    name: 'Robovix Sherman — Xe Tăng Sherman M4',
     category: 'Xe Tăng RC',
     description:
-      'Mô hình xe tăng Sherman M4 in 3D chi tiết, tháp pháo dài Firefly. Thiết kế và hoàn thiện bởi Robovix Studio.',
+      'Mô hình xe tăng Sherman M4 in 3D chi tiết, tháp pháo dài Firefly. Thiết kế, chỉnh sửa và hoàn thiện bởi Robovix Studio.',
     icon: '🛡️',
     badge: 'Mới',
+    heroImage: '/products/tank_sherman/front_tank_no_background.png',
     images: [
       '/products/tank_sherman/front_tank.png',
       '/products/tank_sherman/right_tank.png',

@@ -6,7 +6,7 @@ export default function Packages() {
       <div className="container">
         <div className="section__header">
           <span className="section__tag">Gói dự kiến</span>
-          <h2 className="section__title">Combo sẽ ra mắt cùng sản phẩm</h2>
+          <h2 className="section__title section__title--single">Combo sẽ ra mắt cùng sản phẩm</h2>
           <p className="section__desc">
             Các gói combo đang được chuẩn bị — chưa mở bán, chưa có giá. Đăng ký để biết thêm khi ra mắt.
           </p>

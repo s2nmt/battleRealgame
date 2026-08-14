@@ -27,11 +27,11 @@ function ProductMedia({ product }) {
 
 export default function Shop() {
   return (
-    <section id="shop" className="section">
+    <section id="shop" className="section section--light">
       <div className="container">
         <div className="section__header">
           <span className="section__tag">Sản phẩm Robovix Studio</span>
-          <h2 className="section__title">Mẫu xe & đồ chơi điện tử</h2>
+          <h2 className="section__title section__title--single">Sản phẩm công nghệ, thiết bị IoT</h2>
           <p className="section__desc">
             Đây là các mẫu đang chuẩn bị ra mắt — chưa có giá chính thức. Đăng ký để nhận thông báo khi mở bán.
           </p>
@@ -54,10 +54,6 @@ export default function Shop() {
             </article>
           ))}
         </div>
-
-        <p className="shop-note">
-          🔔 Giá và thời gian giao hàng sẽ được công bố khi chính thức mở bán — đăng ký sớm để được ưu tiên.
-        </p>
       </div>
     </section>
   );

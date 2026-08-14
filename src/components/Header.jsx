@@ -1,10 +1,9 @@
 import { useState } from 'react';
 
 const links = [
-  { href: '#categories', label: 'Danh Mục' },
   { href: '#shop', label: 'Sản Phẩm' },
-  { href: '#how', label: 'Thiết Kế' },
   { href: '#bundles', label: 'Combo' },
+  { href: '#how', label: 'Thiết Kế' },
   { href: '#contact', label: 'Liên Hệ' },
 ];
 

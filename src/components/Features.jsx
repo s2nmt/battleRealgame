@@ -20,11 +20,11 @@ function FeatureIcon({ icon }) {
 
 export default function Features() {
   return (
-    <section className="section section--accent">
+    <section className="section section--tint">
       <div className="container">
         <div className="section__header">
           <span className="section__tag">Tại sao Robovix Studio</span>
-          <h2 className="section__title">Sản phẩm tự thiết kế — Không giống ai</h2>
+          <h2 className="section__title section__title--single">Thiết kế, chỉnh sửa và hoàn thiện</h2>
         </div>
         <div className="features-grid">
           {features.map((f) => (
