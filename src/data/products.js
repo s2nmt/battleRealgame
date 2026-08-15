@@ -174,6 +174,16 @@ export const products = [
     heroImage: '/products/spider/front_no_background.png',
     images: ['/products/spider/front.png'],
   },
+  {
+    id: 3,
+    name: 'Robovix Qmini — Robot Mini',
+    category: 'Robot IoT',
+    description:
+      'Robot 2 chân gọn, mặt LED và khung in 3D. Thiết kế, chỉnh sửa và hoàn thiện bởi Robovix Studio.',
+    icon: '🤖',
+    badge: 'Mới',
+    images: ['/products/Qmini/Qmini.png'],
+  },
 
   // {
   //   id: 11,
