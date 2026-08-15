@@ -150,7 +150,7 @@ export const features = [
 
 export const products = [
   {
-    id: 9,
+    id: 1,
     name: 'Robovix Sherman — Xe Tăng Sherman M4',
     category: 'Xe Tăng RC',
     description:
@@ -164,13 +164,14 @@ export const products = [
     ],
   },
   {
-    id: 10,
+    id: 2,
     name: 'Robovix Spider — Robot Nhện',
     category: 'Robot IoT',
     description:
       'Robot nhện đa khớp, khung cơ khí và mạch điều khiển do chúng tôi thiết kế, chỉnh sửa và hoàn thiện.',
     icon: '🕷️',
     badge: 'Mới',
+    heroImage: '/products/spider/front_no_background.png',
     images: ['/products/spider/front.png'],
   },
 
