@@ -872,6 +872,35 @@ img {
   opacity: 0;
 }
 
+.shop-card__media--model {
+  overflow: hidden;
+  background: #f4f4f5;
+}
+
+.shop-card__media--model model-viewer {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  --poster-color: transparent;
+}
+
+.shop-card__3d {
+  position: absolute;
+  left: 10px;
+  bottom: 10px;
+  z-index: 1;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.4px;
+  text-transform: uppercase;
+  padding: 4px 8px;
+  border-radius: 6px;
+  background: rgba(9, 9, 11, 0.72);
+  color: #fff;
+  pointer-events: none;
+}
+
 .shop-card__media--swap:hover .shop-card__img--primary {
   opacity: 0;
 }

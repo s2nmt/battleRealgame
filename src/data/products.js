@@ -184,6 +184,17 @@ export const products = [
     badge: 'Mới',
     images: ['/products/Qmini/Qmini.png'],
   },
+  {
+    id: 4,
+    name: 'Robovix Duck Mini — Robot Mini',
+    category: 'Robot IoT',
+    description:
+      'Robot mini 2 chân, khung in 3D. Thiết kế, chỉnh sửa và hoàn thiện bởi Robovix Studio.',
+    icon: '🤖',
+    badge: 'Mới',
+    model: '/products/Duck_Mini_Robot/Open_Duck_Mini_v2.glb',
+    images: ['/products/Duck_Mini_Robot/duckmini.png'],
+  },
 
   // {
   //   id: 11,
