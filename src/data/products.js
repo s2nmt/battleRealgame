@@ -1,10 +1,10 @@
 export const storeInfo = {
   name: 'Robovix Studio',
-  tagline: 'Thiết kế — Chỉnh sửa — Hoàn thiện',
+  tagline: 'Robotics & IoT Solutions',
   status: 'Đang chuẩn bị mở bán',
   comingSoonLabel: 'Sắp mở bán',
-  headline: 'Let\'s build',
-  headlineAccent: 'something amazing',
+  headline: 'Robotics & IoT',
+  headlineAccent: 'Solutions',
   description:
     'Xe tăng RC, xe đua RC, robot và đồ chơi điện tử do Robovix Studio thiết kế, chỉnh sửa và hoàn thiện. Sắp mở bán — đăng ký để nhận tin sớm.',
   highlights: [

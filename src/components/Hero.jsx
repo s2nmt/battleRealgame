@@ -24,7 +24,7 @@ export default function Hero() {
         <div className="hero__copy" key={`${current.id}-copy`}>
           <div className="hero__badge">
             <span className="pulse" />
-            {current.badge} · {storeInfo.comingSoonLabel}
+            {storeInfo.tagline}
           </div>
 
           <span className="hero__category">{current.category}</span>
