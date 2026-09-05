@@ -1,6 +1,9 @@
-import { products, storeInfo } from '../data/products';
+import { useEffect, useMemo, useState } from 'react';
+import { categories, products, storeInfo } from '../data/products';
+import { useLanguage } from '../i18n/LanguageContext';
+import { formatPrice } from '../utils/formatPrice';
 
-function ProductMedia({ product }) {
+function ProductMedia({ product, name }) {
   if (product.images?.length) {
     return (
       <div
@@ -8,7 +11,7 @@ function ProductMedia({ product }) {
       >
         <img
           src={product.images[0]}
-          alt={product.name}
+          alt={name}
           className="shop-card__img shop-card__img--primary"
         />
         {product.images[1] && (
@@ -25,36 +28,201 @@ function ProductMedia({ product }) {
   return <div className="shop-card__icon">{product.icon}</div>;
 }
 
-export default function Shop() {
+function ProductCard({ product, variant = 'store' }) {
+  const { t, pick } = useLanguage();
+  const available = product.status === 'available' && product.price != null;
+  const showcase = variant === 'showcase';
+  const name = pick(product.name);
+  const category = pick(product.category);
+  const comingSoon = pick(storeInfo.comingSoonLabel) || t('shop.comingSoon');
+  const badge = product.badge === 'new' ? t('shop.badgeNew') : pick(product.badge);
+
   return (
-    <section id="shop" className="section section--light">
+    <article className={`shop-card${showcase ? ' shop-card--showcase' : ''}`}>
+      {badge && <span className="shop-card__badge">{badge}</span>}
+      <ProductMedia product={product} name={name} />
+      <div className="shop-card__body">
+        <span className="shop-card__category">{category}</span>
+        <h3 className="shop-card__name">{name}</h3>
+        {!showcase && (
+          <>
+            <div className="shop-card__price-row">
+              {available ? (
+                <span className="shop-card__price">{formatPrice(product.price)}</span>
+              ) : (
+                <span className="shop-card__status">{comingSoon}</span>
+              )}
+            </div>
+            <a
+              href="#contact"
+              className={`btn ${available ? 'btn--primary' : 'btn--outline'} btn--sm btn--block`}
+            >
+              {available ? t('shop.addToCart') : t('shop.registerInterest')}
+            </a>
+          </>
+        )}
+        {showcase && (
+          <div className="shop-card__price-row">
+            {available ? (
+              <span className="shop-card__price">{formatPrice(product.price)}</span>
+            ) : (
+              <span className="shop-card__status">{comingSoon}</span>
+            )}
+          </div>
+        )}
+      </div>
+      {showcase && <a href="#contact" className="shop-card__link" aria-label={name} />}
+    </article>
+  );
+}
+
+function ProductSection({
+  id,
+  tag,
+  title,
+  items,
+  showFilters,
+  activeCategory,
+  onCategoryChange,
+  searchQuery,
+  showViewAll,
+}) {
+  const { t, pick } = useLanguage();
+  const isNew = id === 'shop-new';
+
+  return (
+    <section
+      id={id}
+      className={`section ${isNew ? 'section--showcase' : 'section--light'}`}
+    >
       <div className="container">
-        <div className="section__header">
-          <span className="section__tag">Sản phẩm Robovix Studio</span>
-          <h2 className="section__title section__title--single">Sản phẩm công nghệ, thiết bị IoT</h2>
-          <p className="section__desc">
-            Đây là các mẫu đang chuẩn bị ra mắt — chưa có giá chính thức. Đăng ký để nhận thông báo khi mở bán.
-          </p>
-        </div>
+        {isNew ? (
+          <div className="shop-section-head">
+            <h2 className="shop-section-head__title">{title}</h2>
+          </div>
+        ) : (
+          <>
+            <div className="shop-store-head">
+              <div className="shop-store-head__copy">
+                <span className="section__tag">{tag}</span>
+                <h2 className="section__title section__title--single">{title}</h2>
+                {searchQuery ? (
+                  <p className="section__desc">{t('shop.searchResult', { query: searchQuery })}</p>
+                ) : null}
+              </div>
+              {showViewAll && (
+                <button type="button" className="btn btn--outline btn--sm shop-store-head__more">
+                  {t('shop.viewAll')}
+                </button>
+              )}
+            </div>
+
+            {showFilters && (
+              <div className="shop-filters" role="tablist" aria-label={t('shop.categoriesAria')}>
+                <button
+                  type="button"
+                  className={`shop-filter${activeCategory === 'all' ? ' shop-filter--active' : ''}`}
+                  onClick={() => onCategoryChange('all')}
+                >
+                  {t('shop.all')}
+                </button>
+                {categories.map((cat) => (
+                  <button
+                    key={cat.id}
+                    type="button"
+                    className={`shop-filter${activeCategory === cat.id ? ' shop-filter--active' : ''}`}
+                    onClick={() => onCategoryChange(cat.id)}
+                  >
+                    {pick(cat.title)}
+                  </button>
+                ))}
+              </div>
+            )}
+          </>
+        )}
 
         <div className="shop-grid">
-          {products.map((p) => (
-            <article key={p.id} className="shop-card">
-              {p.badge && <span className="shop-card__badge">{p.badge}</span>}
-              <ProductMedia product={p} />
-              <span className="shop-card__category">{p.category}</span>
-              <h3 className="shop-card__name">{p.name}</h3>
-              <p className="shop-card__desc">{p.description}</p>
-              <div className="shop-card__footer">
-                <span className="shop-card__status">{storeInfo.comingSoonLabel}</span>
-                <a href="#contact" className="btn btn--outline btn--sm">
-                  Đăng Ký Quan Tâm
-                </a>
-              </div>
-            </article>
+          {items.slice(0, 4).map((p) => (
+            <ProductCard
+              key={p.id}
+              product={p}
+              variant={isNew ? 'showcase' : 'store'}
+            />
           ))}
         </div>
+
+        {items.length === 0 && (
+          <p className="shop-empty">{t('shop.empty')}</p>
+        )}
       </div>
     </section>
+  );
+}
+
+export default function Shop() {
+  const { t, pick, lang } = useLanguage();
+  const [activeCategory, setActiveCategory] = useState('all');
+  const [searchQuery, setSearchQuery] = useState('');
+
+  useEffect(() => {
+    function onSearch(e) {
+      setSearchQuery(e.detail || '');
+      setActiveCategory('all');
+    }
+    window.addEventListener('robovix:search', onSearch);
+    return () => window.removeEventListener('robovix:search', onSearch);
+  }, []);
+
+  const newProducts = useMemo(() => {
+    let list = products.filter((p) => p.badge === 'new');
+    const q = searchQuery.trim().toLowerCase();
+    if (q) {
+      list = list.filter((p) => {
+        const name = pick(p.name).toLowerCase();
+        const category = pick(p.category).toLowerCase();
+        const description = pick(p.description).toLowerCase();
+        return name.includes(q) || category.includes(q) || description.includes(q);
+      });
+    }
+    return list;
+  }, [searchQuery, pick, lang]);
+
+  const storeProducts = useMemo(() => {
+    let list = products;
+    if (activeCategory !== 'all') {
+      list = list.filter((p) => p.categoryId === activeCategory);
+    }
+    const q = searchQuery.trim().toLowerCase();
+    if (q) {
+      list = list.filter((p) => {
+        const name = pick(p.name).toLowerCase();
+        const category = pick(p.category).toLowerCase();
+        const description = pick(p.description).toLowerCase();
+        return name.includes(q) || category.includes(q) || description.includes(q);
+      });
+    }
+    return list;
+  }, [activeCategory, searchQuery, pick, lang]);
+
+  return (
+    <>
+      <ProductSection
+        id="shop-new"
+        title={t('shop.newTitle')}
+        items={newProducts}
+        searchQuery={searchQuery}
+      />
+      <ProductSection
+        id="shop"
+        tag={t('shop.storeTag')}
+        title={t('shop.storeTitle')}
+        items={storeProducts}
+        showFilters
+        activeCategory={activeCategory}
+        onCategoryChange={setActiveCategory}
+        searchQuery={searchQuery}
+        showViewAll
+      />
+    </>
   );
 }

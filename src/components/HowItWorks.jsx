@@ -1,9 +1,24 @@
-import { steps } from '../data/products';
+import { brandPoints } from '../data/products';
+import { useLanguage } from '../i18n/LanguageContext';
 
-function StepIcon({ icon }) {
+function BrandIcon({ icon }) {
+  if (icon === 'vn-flag') {
+    return (
+      <span className="brand-card__icon brand-card__icon--svg" aria-hidden="true">
+        <svg viewBox="0 0 36 36" width="36" height="36" role="img">
+          <rect width="36" height="36" rx="6" fill="#DA251D" />
+          <polygon
+            fill="#FFCD00"
+            points="18,7 20.5,14.5 28.5,14.5 22,19.2 24.5,26.5 18,21.8 11.5,26.5 14,19.2 7.5,14.5 15.5,14.5"
+          />
+        </svg>
+      </span>
+    );
+  }
+
   if (icon === 'pcb') {
     return (
-      <span className="step__icon step__icon--svg" aria-hidden="true">
+      <span className="brand-card__icon brand-card__icon--svg" aria-hidden="true">
         <svg viewBox="0 0 48 48" width="36" height="36">
           <rect x="6" y="8" width="36" height="32" rx="3" fill="#1b7a3d" />
           <rect x="10" y="12" width="12" height="8" rx="1" fill="#d4d4d8" />
@@ -16,10 +31,6 @@ function StepIcon({ icon }) {
             strokeWidth="1.6"
             d="M16 20v4h8v4M32 20v8M10 22h-4M38 24h4M24 8v4"
           />
-          <circle cx="16" cy="16" r="1.2" fill="#18181b" />
-          <circle cx="32" cy="17" r="1.2" fill="#18181b" />
-          <circle cx="17" cy="30" r="1.2" fill="#18181b" />
-          <circle cx="32" cy="31" r="1.2" fill="#18181b" />
         </svg>
       </span>
     );
@@ -27,7 +38,7 @@ function StepIcon({ icon }) {
 
   if (icon === 'chip') {
     return (
-      <span className="step__icon step__icon--svg" aria-hidden="true">
+      <span className="brand-card__icon brand-card__icon--svg" aria-hidden="true">
         <svg viewBox="0 0 48 48" width="36" height="36">
           <rect x="14" y="14" width="20" height="20" rx="2.5" fill="#3f3f46" />
           <rect x="17" y="17" width="14" height="14" rx="1.5" fill="#27272a" />
@@ -51,30 +62,34 @@ function StepIcon({ icon }) {
     );
   }
 
-  return <span className="step__icon">{icon}</span>;
+  return <span className="brand-card__icon">{icon}</span>;
 }
 
 export default function HowItWorks() {
+  const { t, pick } = useLanguage();
+
   return (
-    <section id="how" className="section section--light">
-      <div className="container">
-        <div className="section__header">
-          <span className="section__tag">Quy trình sản xuất</span>
-          <h2 className="section__title">Từ thiết kế đến thành phẩm</h2>
-          <p className="section__desc">
-            Chúng tôi thiết kế, chỉnh sửa và hoàn thiện từng sản phẩm trước khi đưa ra thị trường.
-          </p>
+    <section id="how" className="section section--surface">
+      <div className="container about-split">
+        <div className="about-split__copy">
+          <span className="section__tag">{t('about.tag')}</span>
+          <h2 className="section__title">{t('about.title')}</h2>
+          <p className="section__desc">{t('about.desc')}</p>
         </div>
 
-        <div className="steps">
-          {steps.map((s) => (
-            <div key={s.step} className="step">
-              <span className="step__num">{s.step}</span>
-              <StepIcon icon={s.icon} />
-              <h3 className="step__title">{s.title}</h3>
-              <p className="step__desc">{s.description}</p>
-            </div>
-          ))}
+        <div className="brand-grid">
+          {brandPoints.map((point) => {
+            const title = pick(point.title);
+            return (
+              <article key={title} className="brand-card">
+                <BrandIcon icon={point.icon} />
+                <div className="brand-card__body">
+                  <h3 className="brand-card__title">{title}</h3>
+                  <p className="brand-card__desc">{pick(point.description)}</p>
+                </div>
+              </article>
+            );
+          })}
         </div>
       </div>
     </section>

@@ -1,162 +1,158 @@
 export const storeInfo = {
-  name: 'Robovix Studio',
+  name: 'Robovix',
   tagline: 'Robotics & IoT Solutions',
-  status: 'Đang chuẩn bị mở bán',
-  comingSoonLabel: 'Sắp mở bán',
+  status: {
+    vi: 'Đang chuẩn bị mở bán',
+    en: 'Preparing to launch',
+  },
+  comingSoonLabel: {
+    vi: 'Sắp mở bán',
+    en: 'Coming soon',
+  },
   headline: 'Robotics & IoT',
   headlineAccent: 'Solutions',
-  description:
-    'Xe tăng RC, xe đua RC, robot và đồ chơi điện tử do Robovix Studio thiết kế, chỉnh sửa và hoàn thiện. Sắp mở bán — đăng ký để nhận tin sớm.',
+  description: {
+    vi: 'Robot, xe tăng RC và thiết bị IoT do Robovix thiết kế & sản xuất. Cung cấp ứng dụng và giải pháp IoT từ phần cứng đến phần mềm.',
+    en: 'Robots, RC tanks, and IoT devices designed & built by Robovix. Applications and IoT solutions from hardware to software.',
+  },
   highlights: [
-    { value: 'Robovix', label: 'Thiết kế & hoàn thiện' },
-    { value: '12+', label: 'Mẫu đang phát triển' },
-    { value: 'Sắp', label: 'Ra mắt' },
-    { value: 'Đăng ký', label: 'Nhận tin sớm' },
+    {
+      value: 'Robovix',
+      label: { vi: 'Thiết kế & hoàn thiện', en: 'Design & finish' },
+    },
+    {
+      value: '12+',
+      label: { vi: 'Mẫu đang phát triển', en: 'Models in development' },
+    },
+    {
+      value: { vi: 'Sắp', en: 'Soon' },
+      label: { vi: 'Ra mắt', en: 'Launch' },
+    },
+    {
+      value: { vi: 'Đăng ký', en: 'Sign up' },
+      label: { vi: 'Nhận tin sớm', en: 'Get early updates' },
+    },
   ],
 };
 
 export const categories = [
   {
-    id: 'racing',
-    icon: '🏎️',
-    title: 'Xe Đua RC',
-    description:
-      'Xe đua tốc độ cao, drift, FPV — khung gầm, động cơ và vỏ xe do chúng tôi thiết kế, chỉnh sửa và hoàn thiện.',
-    tag: 'Sắp mở bán',
-  },
-  {
     id: 'tank',
-    icon: '🛡️',
-    title: 'Xe Tăng RC',
-    description:
-      'Xe tăng mini tháp pháo xoay 360°, bắn đạn nước. Cơ cấu tháp pháo và hệ thống bắn do chúng tôi thiết kế, chỉnh sửa và hoàn thiện.',
-    tag: 'Sắp mở bán',
+    title: { vi: 'Xe Tăng RC', en: 'RC Tanks' },
   },
   {
-    id: 'electronic',
-    icon: '⚡',
-    title: 'Đồ Chơi Điện Tử',
-    description:
-      'Robot điều khiển, xe biến hình, mạch điện tử tích hợp — board và firmware do chúng tôi thiết kế, chỉnh sửa và hoàn thiện.',
-    tag: 'Sắp mở bán',
+    id: 'robot',
+    title: { vi: 'Robot', en: 'Robots' },
+  },
+  {
+    id: 'iot',
+    title: { vi: 'Thiết Bị IoT', en: 'IoT Devices' },
   },
 ];
 
-export const bundles = [
+export const brandPoints = [
   {
-    id: 'racing-kit',
-    name: 'Combo Xe Đua Starter',
-    unit: '1 xe + phụ kiện',
-    badge: 'Dự kiến',
-    description: 'Xe đua RC do chúng tôi thiết kế, kèm pin LiPo, sạc nhanh và tay cầm 2.4GHz.',
-    includes: ['Xe đua Robovix R1', 'Pin + sạc LiPo', 'Tay cầm 2.4GHz', 'Bảo hành dự kiến'],
-  },
-  {
-    id: 'tank-kit',
-    name: 'Combo Xe Tăng Pro',
-    unit: '1 xe + phụ kiện',
-    badge: 'Dự kiến',
-    description: 'Xe tăng do chúng tôi thiết kế với hệ thống bắn đạn nước, tháp pháo servo độc quyền.',
-    includes: ['Xe tăng Robovix T1', 'Bình nước + đạn', 'Pin sạc USB-C', 'Hướng dẫn tiếng Việt'],
-    featured: true,
-  },
-  {
-    id: 'dual',
-    name: 'Combo Đôi Đấu',
-    unit: '2 xe + sân mini',
-    badge: 'Dự kiến',
-    description: '2 xe (đua hoặc tăng) + sân đấu mini gập — do chúng tôi thiết kế cho chơi đối kháng tại nhà.',
-    includes: ['2 xe Robovix', 'Sân đấu mini gập', 'Pin dự phòng', 'Bảo hành dự kiến'],
-  },
-  {
-    id: 'electronic-kit',
-    name: 'Combo Điện Tử Khám Phá',
-    unit: '3 sản phẩm',
-    badge: 'Dự kiến',
-    description: 'Bộ đồ chơi điện tử do chúng tôi thiết kế: robot mini, mạch LED và bộ lắp ráp cơ bản.',
-    includes: ['Robot mini Robovix-Bot', 'Bộ mạch LED thử nghiệm', 'Hướng dẫn lắp ráp', 'Hỗ trợ kỹ thuật'],
-  },
-];
-
-export const steps = [
-  {
-    step: '01',
-    icon: '✏️',
-    title: 'Thiết Kế',
-    description:
-      'Hình thành ý tưởng, chỉnh sửa và hoàn thiện định hướng sản phẩm trước khi triển khai chi tiết.',
-  },
-  {
-    step: '02',
     icon: '⚙️',
-    title: 'Thiết Kế Cơ Khí',
-    description:
-      'Bản vẽ 3D, khung gầm, vỏ xe và cơ cấu chuyển động — thiết kế, chỉnh sửa cho từng sản phẩm.',
+    title: { vi: 'Thiết Kế Cơ Khí', en: 'Mechanical Design' },
+    description: {
+      vi: 'Bản vẽ 3D, khung gầm và cơ cấu chuyển động — thiết kế, chỉnh sửa cho từng sản phẩm.',
+      en: '3D drawings, chassis, and motion mechanisms — designed and refined for each product.',
+    },
   },
   {
-    step: '03',
     icon: 'pcb',
-    title: 'Thiết Kế Mạch Điện',
-    description:
-      'Sơ đồ mạch, PCB, cảm biến và hệ thống nguồn — thiết kế, chỉnh sửa để chạy ổn định trên sản phẩm thật.',
+    title: { vi: 'Thiết Kế Mạch Điện', en: 'Electronics Design' },
+    description: {
+      vi: 'PCB, cảm biến và hệ thống nguồn — thiết kế để chạy ổn định trên sản phẩm thật.',
+      en: 'PCBs, sensors, and power systems — designed for reliable real-world products.',
+    },
   },
   {
-    step: '04',
     icon: 'chip',
-    title: 'Phát Triển Phần Mềm',
-    description:
-      'Firmware, điều khiển và ứng dụng — lập trình, chỉnh sửa và hoàn thiện để sản phẩm hoạt động đúng ý.',
-  },
-  {
-    step: '05',
-    icon: '🔧',
-    title: 'Lắp Ráp',
-    description:
-      'Gia công khung, lắp mạch điện tử, nạp phần mềm và kiểm tra chất lượng từng chiếc trước khi xuất xưởng.',
-  },
-  {
-    step: '06',
-    icon: '🚀',
-    title: 'Ra Mắt Sản Phẩm',
-    description:
-      'Hoàn thiện sản phẩm và chuẩn bị mở bán. Đăng ký để nhận thông báo khi có giá và ngày ra mắt.',
-  },
-];
-
-export const features = [
-  {
-    icon: '🎨',
-    title: 'Thiết Kế Bởi Robovix Studio',
-    description:
-      'Từ bản vẽ 3D, mạch điện tử đến vỏ xe — chúng tôi thiết kế, chỉnh sửa và hoàn thiện từng sản phẩm.',
+    title: { vi: 'Phát Triển Phần Mềm', en: 'Software Development' },
+    description: {
+      vi: 'Firmware, điều khiển và ứng dụng — lập trình và hoàn thiện cho từng mẫu.',
+      en: 'Firmware, control systems, and apps — coded and finished for each model.',
+    },
   },
   {
     icon: 'vn-flag',
-    title: 'Sản Xuất Tại Việt Nam',
-    description: 'Thiết kế và lắp ráp tại Việt Nam, kiểm soát chất lượng từng khâu trước khi đưa ra thị trường.',
+    title: { vi: 'Sản Xuất Tại Việt Nam', en: 'Made in Vietnam' },
+    description: {
+      vi: 'Lắp ráp và kiểm soát chất lượng tại Việt Nam trước khi đưa ra thị trường.',
+      en: 'Assembled and quality-checked in Vietnam before going to market.',
+    },
+  },
+];
+
+export const services = [
+  {
+    id: 'oem-odm',
+    icon: '🏷️',
+    title: {
+      vi: 'OEM / ODM theo logo',
+      en: 'OEM / ODM under your logo',
+    },
+    description: {
+      vi: 'Gia công theo yêu cầu thương hiệu của bạn — từ chỉnh sửa mẫu có sẵn đến thiết kế ODM, gắn logo và đóng gói riêng.',
+      en: 'Built for your brand — from customizing existing models to full ODM design, logo branding, and custom packaging.',
+    },
+    includes: {
+      vi: ['Tùy biến vỏ & logo', 'Chỉnh sửa cơ khí / mạch', 'Sản xuất theo đơn hàng'],
+      en: ['Custom housing & logo', 'Mechanical / PCB edits', 'Made-to-order production'],
+    },
   },
   {
+    id: 'outsource-hardware',
     icon: '⚙️',
-    title: 'Công Nghệ Tùy Biến',
-    description:
-      'Firmware, cơ cấu tháp pháo, hệ thống bắn và khung gầm được thiết kế, chỉnh sửa cho từng sản phẩm.',
+    title: {
+      vi: 'Giải pháp phần cứng',
+      en: 'IoT hardware solutions',
+    },
+    description: {
+      vi: 'Cung cấp giải pháp phần cứng IoT: cơ khí, PCB và firmware — từ ý tưởng đến prototype hoặc series nhỏ.',
+      en: 'IoT hardware solutions: mechanics, PCB, and firmware — from idea to prototype or small series.',
+    },
+    includes: {
+      vi: ['Cơ khí / 3D', 'PCB & mạch điện', 'Firmware'],
+      en: ['Mechanics / 3D', 'PCB & electronics', 'Firmware'],
+    },
   },
   {
-    icon: '🔔',
-    title: 'Đăng Ký Nhận Tin',
-    description: 'Chưa có giá chính thức — để lại thông tin để được ưu tiên khi mở bán và nhận ưu đãi early bird.',
+    id: 'outsource-software',
+    icon: '💻',
+    title: {
+      vi: 'Platform IoT',
+      en: 'IoT software solutions',
+    },
+    description: {
+      vi: 'Cung cấp giải pháp phần mềm IoT: backend, API và hệ thống kết nối — triển khai theo nhu cầu dự án.',
+      en: 'IoT software solutions: backend, APIs, and connected systems — delivered to your project needs.',
+    },
+    includes: {
+      vi: ['Web app', 'Backend / API', 'Tích hợp hệ thống'],
+      en: ['Web apps', 'Backend / API', 'System integration'],
+    },
   },
 ];
 
 export const products = [
   {
     id: 1,
-    name: 'Robovix Sherman — Xe Tăng Sherman M4',
-    category: 'Xe Tăng RC',
-    description:
-      'Mô hình xe tăng Sherman M4 in 3D chi tiết, tháp pháo dài Firefly. Thiết kế, chỉnh sửa và hoàn thiện bởi Robovix Studio.',
+    name: {
+      vi: 'Robovix Sherman — Xe Tăng Sherman M4',
+      en: 'Robovix Sherman — M4 Sherman Tank',
+    },
+    category: { vi: 'Xe Tăng RC', en: 'RC Tanks' },
+    categoryId: 'tank',
+    status: 'coming_soon',
+    price: null,
+    description: {
+      vi: 'Mô hình xe tăng Sherman M4 in 3D chi tiết, tháp pháo dài Firefly. Thiết kế, chỉnh sửa và hoàn thiện bởi Robovix.',
+      en: 'Detailed 3D-printed M4 Sherman tank model with a long Firefly turret. Designed, refined, and finished by Robovix.',
+    },
     icon: '🛡️',
-    badge: 'Mới',
+    badge: 'new',
     heroImage: '/products/tank_sherman/front_tank_no_background.png',
     images: [
       '/products/tank_sherman/front_tank.png',
@@ -165,55 +161,58 @@ export const products = [
   },
   {
     id: 2,
-    name: 'Robovix Spider — Robot Nhện',
-    category: 'Robot IoT',
-    description:
-      'Robot nhện đa khớp, khung cơ khí và mạch điều khiển do chúng tôi thiết kế, chỉnh sửa và hoàn thiện.',
+    name: {
+      vi: 'Robovix Spider — Robot Nhện',
+      en: 'Robovix Spider — Spider Robot',
+    },
+    category: { vi: 'Robot', en: 'Robots' },
+    categoryId: 'robot',
+    status: 'coming_soon',
+    price: null,
+    description: {
+      vi: 'Robot nhện đa khớp, khung cơ khí và mạch điều khiển do chúng tôi thiết kế, chỉnh sửa và hoàn thiện.',
+      en: 'Multi-joint spider robot with mechanical frame and control board designed, refined, and finished by us.',
+    },
     icon: '🕷️',
-    badge: 'Mới',
+    badge: 'new',
     heroImage: '/products/spider/front_no_background.png',
     images: ['/products/spider/front.png'],
   },
   {
     id: 3,
-    name: 'Robovix Qmini — Robot Mini',
-    category: 'Robot IoT',
-    description:
-      'Robot 2 chân gọn, mặt LED và khung in 3D. Thiết kế, chỉnh sửa và hoàn thiện bởi Robovix Studio.',
+    name: {
+      vi: 'Robovix Qmini — Robot Mini',
+      en: 'Robovix Qmini — Mini Robot',
+    },
+    category: { vi: 'Robot', en: 'Robots' },
+    categoryId: 'robot',
+    status: 'coming_soon',
+    price: null,
+    description: {
+      vi: 'Robot 2 chân gọn, mặt LED và khung in 3D. Thiết kế, chỉnh sửa và hoàn thiện bởi Robovix.',
+      en: 'Compact biped robot with LED face and 3D-printed frame. Designed, refined, and finished by Robovix.',
+    },
     icon: '🤖',
-    badge: 'Mới',
+    badge: 'new',
     images: ['/products/Qmini/Qmini.png'],
   },
   {
     id: 4,
-    name: 'Robovix Duck Mini — Robot Mini',
-    category: 'Robot IoT',
-    description:
-      'Robot mini 2 chân, khung in 3D. Thiết kế, chỉnh sửa và hoàn thiện bởi Robovix Studio.',
+    name: {
+      vi: 'Robovix Duck Mini — Robot Mini',
+      en: 'Robovix Duck Mini — Mini Robot',
+    },
+    category: { vi: 'Robot', en: 'Robots' },
+    categoryId: 'robot',
+    status: 'coming_soon',
+    price: null,
+    description: {
+      vi: 'Robot mini 2 chân, khung in 3D. Thiết kế, chỉnh sửa và hoàn thiện bởi Robovix.',
+      en: 'Mini biped robot with a 3D-printed frame. Designed, refined, and finished by Robovix.',
+    },
     icon: '🤖',
-    badge: 'Mới',
+    badge: 'new',
     model: '/products/Duck_Mini_Robot/Open_Duck_Mini_v2.glb',
     images: ['/products/Duck_Mini_Robot/duckmini.png'],
   },
-
-  // {
-  //   id: 11,
-  //   name: 'Robovix Duck Mini — Robot Mini',
-  //   category: 'Robot IoT',
-  //   description:
-  //     'Robot mini 2 chân, đầu cảm biến và khung in 3D. Thiết kế, chỉnh sửa và hoàn thiện bởi Robovix Studio.',
-  //   icon: '🤖',
-  //   badge: 'Mới',
-  //   images: ['/products/Duck_Mini_Robot/duck_mini_robot.png'],
-  // },
-  // {
-  //   id: 12,
-  //   name: 'Robovix Wheel-Leg — Robot Bánh Chân',
-  //   category: 'Robot IoT',
-  //   description:
-  //     'Robot bánh-chân, khung carbon và mạch điều khiển lộ. Thiết kế, chỉnh sửa và hoàn thiện bởi Robovix Studio.',
-  //   icon: '⚙️',
-  //   badge: 'Mới',
-  //   images: ['/products/wheel_leg_robot/RobotRender.png'],
-  // },
 ];

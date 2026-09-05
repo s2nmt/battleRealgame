@@ -1,10 +1,8 @@
 import Header from './components/Header';
 import Hero from './components/Hero';
 import HowItWorks from './components/HowItWorks';
-import Features from './components/Features';
-import Packages from './components/Packages';
+import Services from './components/Services';
 import Shop from './components/Shop';
-import Contact from './components/Contact';
 import Footer from './components/Footer';
 
 export default function App() {
@@ -14,10 +12,8 @@ export default function App() {
       <main>
         <Hero />
         <Shop />
-        <Packages />
+        <Services />
         <HowItWorks />
-        <Features />
-        <Contact />
       </main>
       <Footer />
     </>
