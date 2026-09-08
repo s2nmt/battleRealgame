@@ -4,6 +4,7 @@ export const messages = {
       home: 'Trang chủ',
       shop: 'Cửa hàng',
       newProducts: 'Sản phẩm mới',
+      collection: 'Bộ sưu tập',
       oem: 'Robotics & IoT Solutions',
       about: 'Về chúng tôi',
       contact: 'Liên hệ',
@@ -42,6 +43,10 @@ export const messages = {
       registerInterest: 'Đăng Ký Quan Tâm',
       comingSoon: 'Sắp mở bán',
       badgeNew: 'Mới',
+    },
+    collection: {
+      title: 'Bộ sưu tập',
+      view: 'Xem sản phẩm',
     },
     about: {
       tag: 'Về chúng tôi',
@@ -87,6 +92,7 @@ export const messages = {
       explore: 'Khám phá',
       shop: 'Cửa hàng',
       newProducts: 'Sản phẩm mới',
+      collection: 'Bộ sưu tập',
       about: 'Về chúng tôi',
       oem: 'Robotics & IoT Solutions',
       contactHeading: 'Thông tin liên hệ',
@@ -106,6 +112,7 @@ export const messages = {
       home: 'Home',
       shop: 'Store',
       newProducts: 'New products',
+      collection: 'Collections',
       oem: 'Robotics & IoT Solutions',
       about: 'About us',
       contact: 'Contact',
@@ -144,6 +151,10 @@ export const messages = {
       registerInterest: 'Register Interest',
       comingSoon: 'Coming soon',
       badgeNew: 'New',
+    },
+    collection: {
+      title: 'Collections',
+      view: 'View products',
     },
     about: {
       tag: 'About us',
@@ -189,6 +200,7 @@ export const messages = {
       explore: 'Explore',
       shop: 'Store',
       newProducts: 'New products',
+      collection: 'Collections',
       about: 'About us',
       oem: 'Robotics & IoT Solutions',
       contactHeading: 'Contact info',

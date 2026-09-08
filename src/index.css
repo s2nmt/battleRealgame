@@ -34,6 +34,7 @@
 
 html {
   scroll-behavior: smooth;
+  scroll-padding-top: calc(var(--header-h) + 12px);
   overflow-x: clip;
 }
 
@@ -1264,6 +1265,90 @@ img {
   color: #71717a;
 }
 
+/* Collection */
+.collection__wrap {
+  max-width: 1320px;
+}
+
+.collection-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 28px;
+}
+
+.collection-card {
+  display: flex;
+  flex-direction: column;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  text-decoration: none;
+  color: inherit;
+  transition: border-color 0.15s, box-shadow 0.15s, transform 0.15s;
+}
+
+.collection-card:hover {
+  border-color: rgba(249, 115, 22, 0.35);
+  box-shadow: 0 10px 28px rgba(9, 9, 11, 0.08);
+  transform: translateY(-3px);
+}
+
+.collection-card__media {
+  aspect-ratio: 4 / 3;
+  background: #fff;
+  overflow: hidden;
+}
+
+.collection-card__img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.35s ease;
+}
+
+.collection-card:hover .collection-card__img {
+  transform: scale(1.04);
+}
+
+.collection-card__body {
+  padding: 20px 22px 22px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  flex: 1;
+}
+
+.collection-card__title {
+  font-family: var(--font-display);
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--text-bright);
+  margin: 0;
+  letter-spacing: -0.4px;
+}
+
+.collection-card__desc {
+  margin: 0;
+  font-size: 15px;
+  line-height: 1.55;
+  color: var(--text);
+  flex: 1;
+}
+
+.collection-card__cta {
+  margin-top: 8px;
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--accent);
+}
+
+#collection.section {
+  padding-top: 48px;
+  padding-bottom: 56px;
+}
+
 .shop-card__link {
   position: absolute;
   inset: 0;
@@ -1809,7 +1894,8 @@ img {
   .shop-grid,
   .modes-grid,
   .steps,
-  .services-grid {
+  .services-grid,
+  .collection-grid {
     grid-template-columns: repeat(2, 1fr);
   }
 
@@ -1946,6 +2032,7 @@ img {
   .features-grid,
   .brand-grid,
   .services-grid,
+  .collection-grid,
   .contact {
     grid-template-columns: 1fr;
   }

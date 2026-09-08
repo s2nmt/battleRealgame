@@ -91,7 +91,7 @@ export default function Header() {
     { href: '#', label: t('nav.home') },
     { href: '#shop', label: t('nav.shop') },
     { href: '#shop-new', label: t('nav.newProducts') },
-    { href: '#services', label: t('nav.oem') },
+    { href: '#collection', label: t('nav.collection') },
     { href: '#how', label: t('nav.about') },
   ];
 

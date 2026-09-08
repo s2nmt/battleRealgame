@@ -50,6 +50,39 @@ export const categories = [
   },
 ];
 
+export const collections = [
+  {
+    id: 'tank',
+    href: '#shop',
+    image: '/products/tank_sherman/front_tank.png',
+    title: { vi: 'Xe Tăng RC', en: 'RC Tanks' },
+    description: {
+      vi: 'Mô hình xe tăng chi tiết — thiết kế và hoàn thiện bởi Robovix.',
+      en: 'Detailed tank models — designed and finished by Robovix.',
+    },
+  },
+  {
+    id: 'robot',
+    href: '#shop',
+    image: '/products/spider/front.png',
+    title: { vi: 'Robot', en: 'Robots' },
+    description: {
+      vi: 'Robot đa khớp và mini — từ khung cơ khí đến mạch điều khiển.',
+      en: 'Multi-joint and mini robots — from mechanics to control boards.',
+    },
+  },
+  {
+    id: 'iot',
+    href: '#shop',
+    image: '/products/mini_clock/mini_clock.png',
+    title: { vi: 'Thiết Bị IoT', en: 'IoT Devices' },
+    description: {
+      vi: 'Thiết bị IoT thực tế — phần cứng và phần mềm đi kèm.',
+      en: 'Practical IoT devices — hardware with matching software.',
+    },
+  },
+];
+
 export const brandPoints = [
   {
     icon: '⚙️',

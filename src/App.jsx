@@ -1,7 +1,7 @@
 import Header from './components/Header';
 import Hero from './components/Hero';
 import HowItWorks from './components/HowItWorks';
-import Services from './components/Services';
+import Collection from './components/Collection';
 import Shop from './components/Shop';
 import Footer from './components/Footer';
 
@@ -12,7 +12,7 @@ export default function App() {
       <main>
         <Hero />
         <Shop />
-        <Services />
+        <Collection />
         <HowItWorks />
       </main>
       <Footer />
