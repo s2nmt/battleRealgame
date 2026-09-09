@@ -15,7 +15,7 @@ export default function Footer() {
       <div className="container">
         <div className="footer__grid">
           <div className="footer__brand">
-            <a href="#" className="footer-mark" aria-label="Robovix — Robotics & IoT Solutions">
+            <a href="#" className="footer-mark" aria-label="Robovix — Thế giới đồ chơi công nghệ">
               <span className="footer-mark__name" aria-hidden="true">
                 ROBO
                 <span className="footer-mark__o">
@@ -35,9 +35,7 @@ export default function Footer() {
                 </span>
                 VIX
               </span>
-              <span className="footer-mark__tag">Robotics & IoT Solutions</span>
             </a>
-            <p className="footer__blurb">{t('footer.blurb')}</p>
             <p className="footer__tagline">{t('footer.tagline')}</p>
           </div>
 

@@ -124,13 +124,13 @@ export default function Header() {
     <header className="header">
       <div className="header__main">
         <div className="container header__main-inner">
-          <a href="#" className="logo" aria-label="Robovix — Robotics & IoT Solutions">
+          <a href="#" className="logo" aria-label="Robovix — Thế giới đồ chơi công nghệ">
             <img
               src="/logo-wordmark.png"
-              alt="Robovix Robotics & IoT Solutions"
+              alt="Robovix — Thế giới đồ chơi công nghệ"
               className="logo__img"
-              width="158"
-              height="40"
+              width="200"
+              height="52"
             />
           </a>
 

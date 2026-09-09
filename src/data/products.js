@@ -1,6 +1,6 @@
 export const storeInfo = {
   name: 'Robovix',
-  tagline: 'Robotics & IoT Solutions',
+  tagline: 'Thế giới đồ chơi công nghệ',
   status: {
     vi: 'Đang chuẩn bị mở bán',
     en: 'Preparing to launch',
