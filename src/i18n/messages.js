@@ -33,7 +33,7 @@ export const messages = {
     shop: {
       newTitle: 'Sản phẩm mới',
       storeTag: 'Cửa hàng Robovix',
-      storeTitle: 'Sản phẩm công nghệ, thiết bị IoT',
+      storeTitle: 'Xe tăng RC, xe tự hành & robot',
       searchResult: 'Kết quả cho “{query}”.',
       categoriesAria: 'Danh mục sản phẩm',
       all: 'Tất cả',
@@ -52,24 +52,24 @@ export const messages = {
       tag: 'Về chúng tôi',
       title: 'Robovix',
       desc:
-        'Thành lập từ tháng 1/2026. Chúng tôi thiết kế và phát triển sản phẩm robot, xe tăng, cùng các ứng dụng và giải pháp tích hợp IoT — với hơn 5 năm kinh nghiệm và đội ngũ kỹ sư Việt Nam đầy nhiệt huyết và đam mê, làm chủ từ cơ khí, mạch điện đến phần mềm. Với sứ mệnh đưa công nghệ gần hơn với cuộc sống, Robovix hướng tới sản phẩm thực tế, dễ tiếp cận và tạo giá trị lâu dài cho người dùng.',
+        'Thành lập từ tháng 1/2026. Chúng tôi thiết kế và phát triển xe tăng RC, xe tự hành và robot — với hơn 5 năm kinh nghiệm và đội ngũ kỹ sư Việt Nam đầy nhiệt huyết và đam mê, làm chủ từ cơ khí, mạch điện đến phần mềm. Với sứ mệnh đưa công nghệ gần hơn với cuộc sống, Robovix hướng tới sản phẩm thực tế, dễ tiếp cận và tạo giá trị lâu dài cho người dùng.',
     },
     services: {
       tag: 'Thế giới đồ chơi công nghệ',
-      title: 'Cung cấp ứng dụng Robotics & giải pháp IoT',
+      title: 'Phát triển xe tăng RC, xe tự hành & robot',
       desc:
-        'Robovix cung cấp ứng dụng về robotics và các giải pháp IoT — từ thiết kế phần cứng, kết nối thiết bị đến phần mềm quản lý và vận hành.',
+        'Robovix phát triển xe tăng RC, xe tự hành và robot — từ thiết kế phần cứng, kết nối thiết bị đến phần mềm quản lý và vận hành.',
       contactCta: 'Liên hệ hợp tác',
     },
     contact: {
       tag: 'Liên hệ',
       title: 'Sản phẩm & hợp tác B2B',
       desc:
-        'Đăng ký quan tâm sản phẩm sắp mở bán, hoặc liên hệ tư vấn ứng dụng và giải pháp IoT.',
+        'Đăng ký quan tâm sản phẩm sắp mở bán, hoặc liên hệ tư vấn ứng dụng và giải pháp xe tự hành và robot.',
       perk1: '🛒 Quan tâm sản phẩm Robovix — nhận tin khi mở bán',
       perk2: '📱 Ứng dụng theo nhu cầu dự án của bạn',
       perk3:
-        '⚙️ Giải pháp IoT: phần cứng, kết nối thiết bị & phần mềm vận hành',
+        '⚙️ Giải pháp xe tự hành và robot: phần cứng, kết nối thiết bị & phần mềm vận hành',
       successTitle: 'Đã nhận thông tin!',
       successDesc: 'Chúng tôi sẽ liên hệ sớm nhất có thể.',
       name: 'Họ và tên',
@@ -82,7 +82,7 @@ export const messages = {
       interestProducts: 'Sản phẩm Robovix (sắp mở bán)',
       interestOem: 'Ứng dụng theo yêu cầu',
       interestHardware: 'Giải pháp phần cứng',
-      interestSoftware: 'Giải pháp IoT phần mềm / ứng dụng',
+      interestSoftware: 'Phần mềm điều khiển / tự hành',
       interestAll: 'Tư vấn chung',
       submit: 'Gửi Liên Hệ',
     },
@@ -140,7 +140,7 @@ export const messages = {
     shop: {
       newTitle: 'New products',
       storeTag: 'Robovix Store',
-      storeTitle: 'Tech products & IoT devices',
+      storeTitle: 'RC tanks, autonomous vehicles & robots',
       searchResult: 'Results for “{query}”.',
       categoriesAria: 'Product categories',
       all: 'All',
@@ -159,24 +159,24 @@ export const messages = {
       tag: 'About us',
       title: 'Robovix',
       desc:
-        'Founded in January 2026. We design and develop robots, tanks, applications, and integrated IoT solutions — with more than five years of experience and a passionate, driven Vietnamese engineering team that masters everything from mechanics and electronics to software. Our mission is to bring technology closer to everyday life, creating practical, accessible products that deliver lasting value.',
+        'Founded in January 2026. We design and develop RC tanks, autonomous vehicles, and robots — with more than five years of experience and a passionate, driven Vietnamese engineering team that masters everything from mechanics and electronics to software. Our mission is to bring technology closer to everyday life, creating practical, accessible products that deliver lasting value.',
     },
     services: {
       tag: 'Thế giới đồ chơi công nghệ',
-      title: 'Robotics applications & IoT solutions',
+      title: 'RC tanks, autonomous vehicles & robotics',
       desc:
-        'Robovix provides robotics applications and IoT solutions — from hardware design and device connectivity to management and operations software.',
+        'Robovix develops RC tanks, autonomous vehicles, and robots — from hardware design and device connectivity to management and operations software.',
       contactCta: 'Partner with us',
     },
     contact: {
       tag: 'Contact',
       title: 'Products & B2B partnership',
       desc:
-        'Register interest for upcoming products, or reach out for application and IoT solution consulting.',
+        'Register interest for upcoming products, or reach out for RC tank, autonomous vehicle, and robotics consulting.',
       perk1: '🛒 Follow Robovix products — get notified at launch',
       perk2: '📱 Custom applications for your project needs',
       perk3:
-        '⚙️ IoT solutions: hardware, device connectivity & operations software',
+        '⚙️ robotics and autonomous vehicle solutions: hardware, device connectivity & operations software',
       successTitle: 'Message received!',
       successDesc: 'We will get back to you as soon as possible.',
       name: 'Full name',
@@ -188,13 +188,13 @@ export const messages = {
       interest: 'I am interested in',
       interestProducts: 'Robovix products (coming soon)',
       interestOem: 'Custom applications',
-      interestHardware: 'IoT hardware solutions',
-      interestSoftware: 'IoT software / application solutions',
+      interestHardware: 'Robotics hardware solutions',
+      interestSoftware: 'Control / autonomy software',
       interestAll: 'General inquiry',
       submit: 'Send message',
     },
     footer: {
-      blurb: 'Store · Applications · IoT solutions',
+      blurb: 'RC tanks · Autonomous vehicles · Robots',
       tagline: 'The World of Tech Toys — designed & built in Vietnam.',
       explore: 'Explore',
       shop: 'Store',

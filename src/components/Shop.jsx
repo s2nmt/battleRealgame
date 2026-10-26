@@ -7,7 +7,7 @@ function ProductMedia({ product, name }) {
   if (product.images?.length) {
     return (
       <div
-        className={`shop-card__media${product.images[1] ? ' shop-card__media--swap' : ''}`}
+        className={`shop-card__media${product.images[1] ? ' shop-card__media--swap' : ''}${product.categoryId === 'autonomous' ? ' shop-card__media--compact' : ''}`}
       >
         <img
           src={product.images[0]}
@@ -133,6 +133,7 @@ function ProductSection({
                     className={`shop-filter${activeCategory === cat.id ? ' shop-filter--active' : ''}`}
                     onClick={() => onCategoryChange(cat.id)}
                   >
+                    <img src={cat.image} alt="" className="shop-filter__icon" />
                     {pick(cat.title)}
                   </button>
                 ))}
@@ -142,7 +143,7 @@ function ProductSection({
         )}
 
         <div className="shop-grid">
-          {items.slice(0, 4).map((p) => (
+          {(isNew ? items.slice(0, 4) : items).map((p) => (
             <ProductCard
               key={p.id}
               product={p}

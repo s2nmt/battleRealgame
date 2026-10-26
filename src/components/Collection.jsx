@@ -14,7 +14,7 @@ export default function Collection() {
         <div className="collection-grid">
           {collections.map((item) => (
             <a key={item.id} href={item.href} className="collection-card">
-              <div className="collection-card__media">
+              <div className={`collection-card__media${item.id === 'autonomous' ? ' collection-card__media--rover' : ''}`}>
                 <img src={item.image} alt="" className="collection-card__img" />
               </div>
               <div className="collection-card__body">

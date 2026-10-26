@@ -6,7 +6,7 @@ const ROTATE_MS = 6000;
 
 export default function Hero() {
   const { t, pick } = useLanguage();
-  const featured = products.slice(0, 2);
+  const featured = products.filter((product) => product.heroImage).slice(0, 2);
   const [index, setIndex] = useState(0);
   const current = featured[index] ?? featured[0];
   const image = current.heroImage || current.images?.[0];

@@ -9,11 +9,11 @@ export const storeInfo = {
     vi: 'Sắp mở bán',
     en: 'Coming soon',
   },
-  headline: 'Robotics & IoT',
-  headlineAccent: 'Solutions',
+  headline: 'RC Tanks & Robotics',
+  headlineAccent: 'Autonomous Vehicles',
   description: {
-    vi: 'Robot, xe tăng RC và thiết bị IoT do Robovix thiết kế & sản xuất. Cung cấp ứng dụng và giải pháp IoT từ phần cứng đến phần mềm.',
-    en: 'Robots, RC tanks, and IoT devices designed & built by Robovix. Applications and IoT solutions from hardware to software.',
+    vi: 'Xe tăng RC, xe tự hành và robot do Robovix thiết kế & sản xuất. Phát triển sản phẩm từ cơ khí, mạch điều khiển đến phần mềm vận hành.',
+    en: 'RC tanks, autonomous vehicles, and robots designed & built by Robovix. Product development from mechanics and control boards to operating software.',
   },
   highlights: [
     {
@@ -38,15 +38,18 @@ export const storeInfo = {
 export const categories = [
   {
     id: 'tank',
+    image: '/products/tank_sherman/front_tank_no_background.png',
     title: { vi: 'Xe Tăng RC', en: 'RC Tanks' },
   },
   {
     id: 'robot',
+    image: '/products/spider/front_no_background.png',
     title: { vi: 'Robot', en: 'Robots' },
   },
   {
-    id: 'iot',
-    title: { vi: 'Thiết Bị IoT', en: 'IoT Devices' },
+    id: 'autonomous',
+    image: '/products/autonomous-research-rover.png',
+    title: { vi: 'Xe Tự Hành', en: 'Autonomous Vehicles' },
   },
 ];
 
@@ -72,13 +75,13 @@ export const collections = [
     },
   },
   {
-    id: 'iot',
+    id: 'autonomous',
     href: '#shop',
-    image: '/products/mini_clock/mini_clock.png',
-    title: { vi: 'Thiết Bị IoT', en: 'IoT Devices' },
+    image: '/products/autonomous-research-rover.png',
+    title: { vi: 'Xe Tự Hành', en: 'Autonomous Vehicles' },
     description: {
-      vi: 'Thiết bị IoT thực tế — phần cứng và phần mềm đi kèm.',
-      en: 'Practical IoT devices — hardware with matching software.',
+      vi: 'Khám phá xe tự hành — kết hợp cơ khí, cảm biến và phần mềm điều hướng.',
+      en: 'Explore autonomous vehicles — combining mechanics, sensors, and navigation software.',
     },
   },
 ];
@@ -140,11 +143,11 @@ export const services = [
     icon: '⚙️',
     title: {
       vi: 'Giải pháp phần cứng',
-      en: 'IoT hardware solutions',
+      en: 'Robotics hardware solutions',
     },
     description: {
-      vi: 'Cung cấp giải pháp phần cứng IoT: cơ khí, PCB và firmware — từ ý tưởng đến prototype hoặc series nhỏ.',
-      en: 'IoT hardware solutions: mechanics, PCB, and firmware — from idea to prototype or small series.',
+      vi: 'Cung cấp giải pháp phần cứng robot: cơ khí, PCB và firmware — từ ý tưởng đến prototype hoặc series nhỏ.',
+      en: 'Robotics hardware solutions: mechanics, PCB, and firmware — from idea to prototype or small series.',
     },
     includes: {
       vi: ['Cơ khí / 3D', 'PCB & mạch điện', 'Firmware'],
@@ -155,12 +158,12 @@ export const services = [
     id: 'outsource-software',
     icon: '💻',
     title: {
-      vi: 'Platform IoT',
-      en: 'IoT software solutions',
+      vi: 'Phần mềm điều khiển & tự hành',
+      en: 'Control & autonomy software',
     },
     description: {
-      vi: 'Cung cấp giải pháp phần mềm IoT: backend, API và hệ thống kết nối — triển khai theo nhu cầu dự án.',
-      en: 'IoT software solutions: backend, APIs, and connected systems — delivered to your project needs.',
+      vi: 'Cung cấp giải pháp phần mềm điều khiển và tự hành: backend, API và hệ thống kết nối — triển khai theo nhu cầu dự án.',
+      en: 'Control & autonomy software: backend, APIs, and connected systems — delivered to your project needs.',
     },
     includes: {
       vi: ['Web app', 'Backend / API', 'Tích hợp hệ thống'],
@@ -170,6 +173,22 @@ export const services = [
 ];
 
 export const products = [
+  {
+    id: 5,
+    name: {
+      vi: 'Robovix Rover — Xe Tự Hành Nghiên Cứu',
+      en: 'Robovix Rover — Educational Autonomous Vehicle',
+    },
+    category: { vi: 'Xe Tự Hành', en: 'Autonomous Vehicles' },
+    categoryId: 'autonomous',
+    status: 'coming_soon',
+    price: null,
+    description: {
+      vi: 'Ý tưởng xe tự hành dạng đồ chơi nghiên cứu, khung mở để khám phá mạch điều khiển, camera và cảm biến. Hình ảnh minh họa bằng AI.',
+      en: 'An educational autonomous toy rover concept with an open chassis for exploring control boards, cameras, and sensors. AI-generated concept image.',
+    },
+    images: ['/products/autonomous-research-rover.png'],
+  },
   {
     id: 1,
     name: {
