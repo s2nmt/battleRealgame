@@ -9,11 +9,11 @@ export const storeInfo = {
     vi: 'Sắp mở bán',
     en: 'Coming soon',
   },
-  headline: 'RC Tanks & Robotics',
+  headline: 'RC Tanks',
   headlineAccent: 'Autonomous Vehicles',
   description: {
-    vi: 'Xe tăng RC, xe tự hành và robot do Robovix thiết kế & sản xuất. Phát triển sản phẩm từ cơ khí, mạch điều khiển đến phần mềm vận hành.',
-    en: 'RC tanks, autonomous vehicles, and robots designed & built by Robovix. Product development from mechanics and control boards to operating software.',
+    vi: 'Xe tăng RC và xe tự hành do Robovix thiết kế & sản xuất. Phát triển sản phẩm từ cơ khí, mạch điều khiển đến phần mềm vận hành.',
+    en: 'RC tanks and autonomous vehicles designed & built by Robovix. Product development from mechanics and control boards to operating software.',
   },
   highlights: [
     {
@@ -42,47 +42,9 @@ export const categories = [
     title: { vi: 'Xe Tăng RC', en: 'RC Tanks' },
   },
   {
-    id: 'robot',
-    image: '/products/spider/front_no_background.png',
-    title: { vi: 'Robot', en: 'Robots' },
-  },
-  {
     id: 'autonomous',
     image: '/products/autonomous-research-rover.png',
     title: { vi: 'Xe Tự Hành', en: 'Autonomous Vehicles' },
-  },
-];
-
-export const collections = [
-  {
-    id: 'tank',
-    href: '#shop',
-    image: '/products/tank_sherman/front_tank.png',
-    title: { vi: 'Xe Tăng RC', en: 'RC Tanks' },
-    description: {
-      vi: 'Mô hình xe tăng chi tiết — thiết kế và hoàn thiện bởi Robovix.',
-      en: 'Detailed tank models — designed and finished by Robovix.',
-    },
-  },
-  {
-    id: 'robot',
-    href: '#shop',
-    image: '/products/spider/front.png',
-    title: { vi: 'Robot', en: 'Robots' },
-    description: {
-      vi: 'Robot đa khớp và mini — từ khung cơ khí đến mạch điều khiển.',
-      en: 'Multi-joint and mini robots — from mechanics to control boards.',
-    },
-  },
-  {
-    id: 'autonomous',
-    href: '#shop',
-    image: '/products/autonomous-research-rover.png',
-    title: { vi: 'Xe Tự Hành', en: 'Autonomous Vehicles' },
-    description: {
-      vi: 'Khám phá xe tự hành — kết hợp cơ khí, cảm biến và phần mềm điều hướng.',
-      en: 'Explore autonomous vehicles — combining mechanics, sensors, and navigation software.',
-    },
   },
 ];
 
@@ -143,11 +105,11 @@ export const services = [
     icon: '⚙️',
     title: {
       vi: 'Giải pháp phần cứng',
-      en: 'Robotics hardware solutions',
+      en: 'Vehicle hardware solutions',
     },
     description: {
-      vi: 'Cung cấp giải pháp phần cứng robot: cơ khí, PCB và firmware — từ ý tưởng đến prototype hoặc series nhỏ.',
-      en: 'Robotics hardware solutions: mechanics, PCB, and firmware — from idea to prototype or small series.',
+      vi: 'Cung cấp giải pháp phần cứng xe tăng RC và xe tự hành: cơ khí, PCB và firmware — từ ý tưởng đến prototype hoặc series nhỏ.',
+      en: 'Vehicle hardware solutions: mechanics, PCB, and firmware — from idea to prototype or small series.',
     },
     includes: {
       vi: ['Cơ khí / 3D', 'PCB & mạch điện', 'Firmware'],
@@ -210,61 +172,5 @@ export const products = [
       '/products/tank_sherman/front_tank.png',
       '/products/tank_sherman/right_tank.png',
     ],
-  },
-  {
-    id: 2,
-    name: {
-      vi: 'Robovix Spider — Robot Nhện',
-      en: 'Robovix Spider — Spider Robot',
-    },
-    category: { vi: 'Robot', en: 'Robots' },
-    categoryId: 'robot',
-    status: 'coming_soon',
-    price: null,
-    description: {
-      vi: 'Robot nhện đa khớp, khung cơ khí và mạch điều khiển do chúng tôi thiết kế, chỉnh sửa và hoàn thiện.',
-      en: 'Multi-joint spider robot with mechanical frame and control board designed, refined, and finished by us.',
-    },
-    icon: '🕷️',
-    badge: 'new',
-    heroImage: '/products/spider/front_no_background.png',
-    images: ['/products/spider/front.png'],
-  },
-  {
-    id: 3,
-    name: {
-      vi: 'Robovix Qmini — Robot Mini',
-      en: 'Robovix Qmini — Mini Robot',
-    },
-    category: { vi: 'Robot', en: 'Robots' },
-    categoryId: 'robot',
-    status: 'coming_soon',
-    price: null,
-    description: {
-      vi: 'Robot 2 chân gọn, mặt LED và khung in 3D. Thiết kế, chỉnh sửa và hoàn thiện bởi Robovix.',
-      en: 'Compact biped robot with LED face and 3D-printed frame. Designed, refined, and finished by Robovix.',
-    },
-    icon: '🤖',
-    badge: 'new',
-    images: ['/products/Qmini/Qmini.png'],
-  },
-  {
-    id: 4,
-    name: {
-      vi: 'Robovix Duck Mini — Robot Mini',
-      en: 'Robovix Duck Mini — Mini Robot',
-    },
-    category: { vi: 'Robot', en: 'Robots' },
-    categoryId: 'robot',
-    status: 'coming_soon',
-    price: null,
-    description: {
-      vi: 'Robot mini 2 chân, khung in 3D. Thiết kế, chỉnh sửa và hoàn thiện bởi Robovix.',
-      en: 'Mini biped robot with a 3D-printed frame. Designed, refined, and finished by Robovix.',
-    },
-    icon: '🤖',
-    badge: 'new',
-    model: '/products/Duck_Mini_Robot/Open_Duck_Mini_v2.glb',
-    images: ['/products/Duck_Mini_Robot/duckmini.png'],
   },
 ];

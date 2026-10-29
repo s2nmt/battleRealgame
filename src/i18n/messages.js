@@ -4,7 +4,6 @@ export const messages = {
       home: 'Trang chủ',
       shop: 'Cửa hàng',
       newProducts: 'Sản phẩm mới',
-      collection: 'Bộ sưu tập',
       oem: 'Thế giới đồ chơi công nghệ',
       about: 'Về chúng tôi',
       contact: 'Liên hệ',
@@ -33,7 +32,7 @@ export const messages = {
     shop: {
       newTitle: 'Sản phẩm mới',
       storeTag: 'Cửa hàng Robovix',
-      storeTitle: 'Xe tăng RC, xe tự hành & robot',
+      storeTitle: 'Xe tăng RC & xe tự hành',
       searchResult: 'Kết quả cho “{query}”.',
       categoriesAria: 'Danh mục sản phẩm',
       all: 'Tất cả',
@@ -44,32 +43,28 @@ export const messages = {
       comingSoon: 'Sắp mở bán',
       badgeNew: 'Mới',
     },
-    collection: {
-      title: 'Bộ sưu tập',
-      view: 'Xem sản phẩm',
-    },
     about: {
       tag: 'Về chúng tôi',
       title: 'Robovix',
       desc:
-        'Thành lập từ tháng 1/2026. Chúng tôi thiết kế và phát triển xe tăng RC, xe tự hành và robot — với hơn 5 năm kinh nghiệm và đội ngũ kỹ sư Việt Nam đầy nhiệt huyết và đam mê, làm chủ từ cơ khí, mạch điện đến phần mềm. Với sứ mệnh đưa công nghệ gần hơn với cuộc sống, Robovix hướng tới sản phẩm thực tế, dễ tiếp cận và tạo giá trị lâu dài cho người dùng.',
+        'Thành lập từ tháng 1/2026. Chúng tôi thiết kế và phát triển xe tăng RC & xe tự hành — với hơn 5 năm kinh nghiệm và đội ngũ kỹ sư Việt Nam đầy nhiệt huyết và đam mê, làm chủ từ cơ khí, mạch điện đến phần mềm. Với sứ mệnh đưa công nghệ gần hơn với cuộc sống, Robovix hướng tới sản phẩm thực tế, dễ tiếp cận và tạo giá trị lâu dài cho người dùng.',
     },
     services: {
       tag: 'Thế giới đồ chơi công nghệ',
-      title: 'Phát triển xe tăng RC, xe tự hành & robot',
+      title: 'Phát triển xe tăng RC & xe tự hành',
       desc:
-        'Robovix phát triển xe tăng RC, xe tự hành và robot — từ thiết kế phần cứng, kết nối thiết bị đến phần mềm quản lý và vận hành.',
+        'Robovix phát triển xe tăng RC & xe tự hành — từ thiết kế phần cứng, kết nối thiết bị đến phần mềm quản lý và vận hành.',
       contactCta: 'Liên hệ hợp tác',
     },
     contact: {
       tag: 'Liên hệ',
       title: 'Sản phẩm & hợp tác B2B',
       desc:
-        'Đăng ký quan tâm sản phẩm sắp mở bán, hoặc liên hệ tư vấn ứng dụng và giải pháp xe tự hành và robot.',
+        'Đăng ký quan tâm sản phẩm sắp mở bán, hoặc liên hệ tư vấn ứng dụng và giải pháp xe tăng RC và xe tự hành.',
       perk1: '🛒 Quan tâm sản phẩm Robovix — nhận tin khi mở bán',
       perk2: '📱 Ứng dụng theo nhu cầu dự án của bạn',
       perk3:
-        '⚙️ Giải pháp xe tự hành và robot: phần cứng, kết nối thiết bị & phần mềm vận hành',
+        '⚙️ Giải pháp xe tăng RC và xe tự hành: phần cứng, kết nối thiết bị & phần mềm vận hành',
       successTitle: 'Đã nhận thông tin!',
       successDesc: 'Chúng tôi sẽ liên hệ sớm nhất có thể.',
       name: 'Họ và tên',
@@ -91,7 +86,6 @@ export const messages = {
       explore: 'Khám phá',
       shop: 'Cửa hàng',
       newProducts: 'Sản phẩm mới',
-      collection: 'Bộ sưu tập',
       about: 'Về chúng tôi',
       oem: 'Thế giới đồ chơi công nghệ',
       contactHeading: 'Thông tin liên hệ',
@@ -111,7 +105,6 @@ export const messages = {
       home: 'Home',
       shop: 'Store',
       newProducts: 'New products',
-      collection: 'Collections',
       oem: 'Thế giới đồ chơi công nghệ',
       about: 'About us',
       contact: 'Contact',
@@ -140,7 +133,7 @@ export const messages = {
     shop: {
       newTitle: 'New products',
       storeTag: 'Robovix Store',
-      storeTitle: 'RC tanks, autonomous vehicles & robots',
+      storeTitle: 'RC tanks & autonomous vehicles',
       searchResult: 'Results for “{query}”.',
       categoriesAria: 'Product categories',
       all: 'All',
@@ -151,32 +144,28 @@ export const messages = {
       comingSoon: 'Coming soon',
       badgeNew: 'New',
     },
-    collection: {
-      title: 'Collections',
-      view: 'View products',
-    },
     about: {
       tag: 'About us',
       title: 'Robovix',
       desc:
-        'Founded in January 2026. We design and develop RC tanks, autonomous vehicles, and robots — with more than five years of experience and a passionate, driven Vietnamese engineering team that masters everything from mechanics and electronics to software. Our mission is to bring technology closer to everyday life, creating practical, accessible products that deliver lasting value.',
+        'Founded in January 2026. We design and develop RC tanks and autonomous vehicles — with more than five years of experience and a passionate, driven Vietnamese engineering team that masters everything from mechanics and electronics to software. Our mission is to bring technology closer to everyday life, creating practical, accessible products that deliver lasting value.',
     },
     services: {
       tag: 'Thế giới đồ chơi công nghệ',
-      title: 'RC tanks, autonomous vehicles & robotics',
+      title: 'RC tanks & autonomous vehicles',
       desc:
-        'Robovix develops RC tanks, autonomous vehicles, and robots — from hardware design and device connectivity to management and operations software.',
+        'Robovix develops RC tanks and autonomous vehicles — from hardware design and device connectivity to management and operations software.',
       contactCta: 'Partner with us',
     },
     contact: {
       tag: 'Contact',
       title: 'Products & B2B partnership',
       desc:
-        'Register interest for upcoming products, or reach out for RC tank, autonomous vehicle, and robotics consulting.',
+        'Register interest for upcoming products, or reach out for RC tank and autonomous vehicle consulting.',
       perk1: '🛒 Follow Robovix products — get notified at launch',
       perk2: '📱 Custom applications for your project needs',
       perk3:
-        '⚙️ robotics and autonomous vehicle solutions: hardware, device connectivity & operations software',
+        '⚙️ RC tank and autonomous vehicle solutions: hardware, device connectivity & operations software',
       successTitle: 'Message received!',
       successDesc: 'We will get back to you as soon as possible.',
       name: 'Full name',
@@ -188,18 +177,17 @@ export const messages = {
       interest: 'I am interested in',
       interestProducts: 'Robovix products (coming soon)',
       interestOem: 'Custom applications',
-      interestHardware: 'Robotics hardware solutions',
+      interestHardware: 'Vehicle hardware solutions',
       interestSoftware: 'Control / autonomy software',
       interestAll: 'General inquiry',
       submit: 'Send message',
     },
     footer: {
-      blurb: 'RC tanks · Autonomous vehicles · Robots',
+      blurb: 'RC tanks · Autonomous vehicles',
       tagline: 'The World of Tech Toys — designed & built in Vietnam.',
       explore: 'Explore',
       shop: 'Store',
       newProducts: 'New products',
-      collection: 'Collections',
       about: 'About us',
       oem: 'The World of Tech Toys',
       contactHeading: 'Contact info',
