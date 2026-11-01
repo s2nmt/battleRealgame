@@ -101,7 +101,6 @@ export default function Footer() {
               <h3 className="footer__heading">{t('footer.explore')}</h3>
               <div className="footer__links">
                 <a href="#shop">{t('footer.shop')}</a>
-                <a href="#shop-new">{t('footer.newProducts')}</a>
                 <a href="#how">{t('footer.about')}</a>
               </div>
             </div>

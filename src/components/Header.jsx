@@ -90,7 +90,7 @@ export default function Header() {
   const links = [
     { href: '#', label: t('nav.home') },
     { href: '#shop', label: t('nav.shop') },
-    { href: '#shop-new', label: t('nav.newProducts') },
+    { href: '#diy', label: t('nav.controlBoards') },
     { href: '#how', label: t('nav.about') },
   ];
 

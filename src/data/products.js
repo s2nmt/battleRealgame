@@ -136,6 +136,46 @@ export const services = [
 
 export const products = [
   {
+    id: 7,
+    diyType: 'camera',
+    name: {
+      vi: 'Bộ điều khiển tích hợp camera RV1106 eMMC',
+      en: 'RV1106 eMMC Controller with Integrated Camera',
+    },
+    category: { vi: 'Mạch điều khiển cho DIY', en: 'Control Boards for Makers' },
+    categoryId: 'diy',
+    status: 'coming_soon',
+    price: null,
+    description: {
+      vi: 'Bộ điều khiển tích hợp camera cho xe DIY.',
+      en: 'A controller with an integrated camera for DIY vehicles.',
+    },
+    icon: '📷',
+    images: [
+      '/products/RV1106_EMMC/rv1106_emmc.png',
+    ],
+  },
+  {
+    id: 8,
+    diyType: 'camera',
+    name: {
+      vi: 'Bộ điều khiển tích hợp camera RV1106 SPI',
+      en: 'RV1106 SPI Controller with Integrated Camera',
+    },
+    category: { vi: 'Mạch điều khiển cho DIY', en: 'Control Boards for Makers' },
+    categoryId: 'diy',
+    status: 'coming_soon',
+    price: null,
+    description: {
+      vi: 'Bộ điều khiển tích hợp camera RV1106 SPI cho xe DIY.',
+      en: 'An RV1106 SPI controller with an integrated camera for DIY vehicles.',
+    },
+    icon: '📷',
+    images: [
+      '/products/RV1106_spi/rv1106_spi.png',
+    ],
+  },
+  {
     id: 5,
     name: {
       vi: 'Robovix Rover — Xe Tự Hành Nghiên Cứu',

@@ -2,6 +2,7 @@ export const messages = {
   vi: {
     nav: {
       home: 'Trang chủ',
+      controlBoards: 'Mạch điều khiển',
       shop: 'Cửa hàng',
       newProducts: 'Sản phẩm mới',
       oem: 'Thế giới đồ chơi công nghệ',
@@ -33,6 +34,7 @@ export const messages = {
       newTitle: 'Sản phẩm mới',
       storeTag: 'Cửa hàng Robovix',
       storeTitle: 'Xe tăng RC & xe tự hành',
+      diyTitle: 'Mạch điều khiển cho DIY',
       searchResult: 'Kết quả cho “{query}”.',
       categoriesAria: 'Danh mục sản phẩm',
       all: 'Tất cả',
@@ -103,6 +105,7 @@ export const messages = {
   en: {
     nav: {
       home: 'Home',
+      controlBoards: 'Control Boards',
       shop: 'Store',
       newProducts: 'New products',
       oem: 'Thế giới đồ chơi công nghệ',
@@ -134,6 +137,7 @@ export const messages = {
       newTitle: 'New products',
       storeTag: 'Robovix Store',
       storeTitle: 'RC tanks & autonomous vehicles',
+      diyTitle: 'Control Boards for Makers',
       searchResult: 'Results for “{query}”.',
       categoriesAria: 'Product categories',
       all: 'All',

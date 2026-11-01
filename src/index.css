@@ -1085,6 +1085,7 @@ img {
 
 .shop-filter {
   display: inline-flex;
+  min-height: 50px;
   align-items: center;
   justify-content: center;
   gap: 10px;
@@ -1103,6 +1104,19 @@ img {
   color: #fff;
 }
 
+.shop-filter__icon--symbol {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 26px;
+  line-height: 1;
+}
+
+.shop-filter__icon--board {
+  background-color: currentColor;
+  mask: url('/control-board-icon.svg') center / contain no-repeat;
+}
+
 .shop-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -1110,6 +1124,7 @@ img {
 }
 
 #shop-new .container,
+#diy .container,
 #shop .container {
   max-width: 1320px;
 }
@@ -1239,6 +1254,11 @@ img {
   background: #f4f4f5;
   border-bottom: 1px solid var(--border);
   overflow: hidden;
+}
+
+.shop-card__media--board .shop-card__img {
+  object-fit: contain;
+  padding: 16px;
 }
 
 .shop-card__img {

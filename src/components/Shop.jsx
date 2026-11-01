@@ -7,7 +7,7 @@ function ProductMedia({ product, name }) {
   if (product.images?.length) {
     return (
       <div
-        className={`shop-card__media${product.images[1] ? ' shop-card__media--swap' : ''}${product.categoryId === 'autonomous' ? ' shop-card__media--compact' : ''}`}
+        className={`shop-card__media${product.images[1] ? ' shop-card__media--swap' : ''}${product.categoryId === 'autonomous' ? ' shop-card__media--compact' : ''}${product.categoryId === 'diy' ? ' shop-card__media--board' : ''}`}
       >
         <img
           src={product.images[0]}
@@ -82,6 +82,7 @@ function ProductSection({
   title,
   items,
   showFilters,
+  filterCategories = categories,
   activeCategory,
   onCategoryChange,
   searchQuery,
@@ -104,7 +105,7 @@ function ProductSection({
           <>
             <div className="shop-store-head">
               <div className="shop-store-head__copy">
-                <span className="section__tag">{tag}</span>
+                {tag && <span className="section__tag">{tag}</span>}
                 <h2 className="section__title section__title--single">{title}</h2>
                 {searchQuery ? (
                   <p className="section__desc">{t('shop.searchResult', { query: searchQuery })}</p>
@@ -118,22 +119,30 @@ function ProductSection({
             </div>
 
             {showFilters && (
-              <div className="shop-filters" role="tablist" aria-label={t('shop.categoriesAria')}>
+              <div className="shop-filters" role="group" aria-label={`${title}: ${t('shop.categoriesAria')}`}>
                 <button
                   type="button"
                   className={`shop-filter${activeCategory === 'all' ? ' shop-filter--active' : ''}`}
                   onClick={() => onCategoryChange('all')}
+                  aria-pressed={activeCategory === 'all'}
                 >
                   {t('shop.all')}
                 </button>
-                {categories.map((cat) => (
+                {filterCategories.map((cat) => (
                   <button
                     key={cat.id}
                     type="button"
                     className={`shop-filter${activeCategory === cat.id ? ' shop-filter--active' : ''}`}
                     onClick={() => onCategoryChange(cat.id)}
+                    aria-pressed={activeCategory === cat.id}
                   >
-                    <img src={cat.image} alt="" className="shop-filter__icon" />
+                    {cat.icon === 'board' ? (
+                      <span className="shop-filter__icon shop-filter__icon--board" aria-hidden="true" />
+                    ) : cat.image ? (
+                      <img src={cat.image} alt="" className="shop-filter__icon" />
+                    ) : (
+                      <span className="shop-filter__icon shop-filter__icon--symbol" aria-hidden="true">{cat.icon}</span>
+                    )}
                     {pick(cat.title)}
                   </button>
                 ))}
@@ -163,33 +172,21 @@ function ProductSection({
 export default function Shop() {
   const { t, pick, lang } = useLanguage();
   const [activeCategory, setActiveCategory] = useState('all');
+
   const [searchQuery, setSearchQuery] = useState('');
 
   useEffect(() => {
     function onSearch(e) {
       setSearchQuery(e.detail || '');
       setActiveCategory('all');
+
     }
     window.addEventListener('robovix:search', onSearch);
     return () => window.removeEventListener('robovix:search', onSearch);
   }, []);
 
-  const newProducts = useMemo(() => {
-    let list = products.filter((p) => p.badge === 'new');
-    const q = searchQuery.trim().toLowerCase();
-    if (q) {
-      list = list.filter((p) => {
-        const name = pick(p.name).toLowerCase();
-        const category = pick(p.category).toLowerCase();
-        const description = pick(p.description).toLowerCase();
-        return name.includes(q) || category.includes(q) || description.includes(q);
-      });
-    }
-    return list;
-  }, [searchQuery, pick, lang]);
-
   const storeProducts = useMemo(() => {
-    let list = products;
+    let list = products.filter((p) => p.categoryId !== 'diy');
     if (activeCategory !== 'all') {
       list = list.filter((p) => p.categoryId === activeCategory);
     }
@@ -205,14 +202,17 @@ export default function Shop() {
     return list;
   }, [activeCategory, searchQuery, pick, lang]);
 
+  const diyProducts = products.filter((p) => {
+    if (p.categoryId !== 'diy') return false;
+
+    const q = searchQuery.trim().toLowerCase();
+    return !q || [p.name, p.category, p.description].some((text) =>
+      pick(text).toLowerCase().includes(q),
+    );
+  });
+
   return (
     <>
-      <ProductSection
-        id="shop-new"
-        title={t('shop.newTitle')}
-        items={newProducts}
-        searchQuery={searchQuery}
-      />
       <ProductSection
         id="shop"
         tag={t('shop.storeTag')}
@@ -223,6 +223,12 @@ export default function Shop() {
         onCategoryChange={setActiveCategory}
         searchQuery={searchQuery}
         showViewAll
+      />
+      <ProductSection
+        id="diy"
+        title={t('shop.diyTitle')}
+        items={diyProducts}
+        searchQuery={searchQuery}
       />
     </>
   );
