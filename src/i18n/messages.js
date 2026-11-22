@@ -2,7 +2,7 @@ export const messages = {
   vi: {
     nav: {
       home: 'Trang chủ',
-      accessories: 'Phụ kiện',
+      accessories: 'Board mạch DIY',
       shop: 'Sản phẩm',
       newProducts: 'Sản phẩm mới',
       oem: 'Thế giới đồ chơi công nghệ',
@@ -14,6 +14,9 @@ export const messages = {
       languages: 'Ngôn ngữ',
     },
     header: {
+      searchPlaceholder: 'Tìm kiếm sản phẩm',
+      searchAria: 'Tìm kiếm sản phẩm',
+      search: 'Tìm kiếm',
       wishlist: 'Yêu thích',
       wishlistTitle: 'Sắp ra mắt',
       cart: 'Giỏ hàng',
@@ -31,8 +34,9 @@ export const messages = {
       newTitle: 'Sản phẩm mới',
       storeTitle: 'Sản phẩm Robovix',
       storeDesc: 'Các mẫu xe tăng RC và xe tự hành do Robovix phát triển.',
-      accessoriesTitle: 'Phụ kiện',
+      accessoriesTitle: 'Board mạch DIY',
       accessoriesDesc: 'Bo điều khiển tích hợp camera dành cho nghiên cứu, thử nghiệm và các dự án tự lắp ráp.',
+      searchResult: 'Kết quả cho “{query}”.',
       categoriesAria: 'Danh mục sản phẩm',
       all: 'Tất cả',
       empty: 'Chưa có sản phẩm trong danh mục này.',
@@ -106,7 +110,7 @@ export const messages = {
   en: {
     nav: {
       home: 'Home',
-      accessories: 'Accessories',
+      accessories: 'DIY Circuit Boards',
       shop: 'Products',
       newProducts: 'New products',
       oem: 'Thế giới đồ chơi công nghệ',
@@ -118,6 +122,9 @@ export const messages = {
       languages: 'Languages',
     },
     header: {
+      searchPlaceholder: 'Search products',
+      searchAria: 'Search products',
+      search: 'Search',
       wishlist: 'Wishlist',
       wishlistTitle: 'Coming soon',
       cart: 'Cart',
@@ -135,8 +142,9 @@ export const messages = {
       newTitle: 'New products',
       storeTitle: 'Robovix Products',
       storeDesc: 'RC tank models and autonomous vehicles developed by Robovix.',
-      accessoriesTitle: 'Accessories',
+      accessoriesTitle: 'DIY Circuit Boards',
       accessoriesDesc: 'Control boards with integrated cameras for research, prototyping, and DIY builds.',
+      searchResult: 'Results for “{query}”.',
       categoriesAria: 'Product categories',
       all: 'All',
       empty: 'No products in this category yet.',

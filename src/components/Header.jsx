@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useLayoutEffect, useRef, useState } from 'react';
 import { useLanguage } from '../i18n/LanguageContext';
 
 const socials = [
@@ -83,7 +83,11 @@ const languageOptions = [
 export default function Header({ isProductPage }) {
   const { lang, setLang, t } = useLanguage();
   const [open, setOpen] = useState(false);
+  const [query, setQuery] = useState(
+    () => new URLSearchParams(window.location.search).get('q') ?? '',
+  );
   const [langOpen, setLangOpen] = useState(false);
+  const headerRef = useRef(null);
   const langRef = useRef(null);
   const homePrefix = isProductPage ? './' : '';
 
@@ -96,6 +100,24 @@ export default function Header({ isProductPage }) {
 
   const currentLang = languageOptions.find((l) => l.id === lang) || languageOptions[0];
 
+  useLayoutEffect(() => {
+    const header = headerRef.current;
+    const root = document.documentElement;
+
+    function syncHeaderOffset() {
+      root.style.setProperty('--header-offset', `${header.getBoundingClientRect().height}px`);
+    }
+
+    syncHeaderOffset();
+    const observer = new ResizeObserver(syncHeaderOffset);
+    observer.observe(header, { box: 'border-box' });
+
+    return () => {
+      observer.disconnect();
+      root.style.removeProperty('--header-offset');
+    };
+  }, []);
+
   useEffect(() => {
     function onPointerDown(e) {
       if (!langRef.current?.contains(e.target)) {
@@ -106,13 +128,25 @@ export default function Header({ isProductPage }) {
     return () => document.removeEventListener('pointerdown', onPointerDown);
   }, []);
 
+  function handleSearch(e) {
+    e.preventDefault();
+    const q = query.trim();
+    if (isProductPage) {
+      window.location.assign(`./?${new URLSearchParams({ q })}#shop`);
+      return;
+    }
+    window.dispatchEvent(new CustomEvent('robovix:search', { detail: q }));
+    document.getElementById('shop')?.scrollIntoView({ behavior: 'smooth' });
+    setOpen(false);
+  }
+
   function selectLang(id) {
     setLang(id);
     setLangOpen(false);
   }
 
   return (
-    <header className="header">
+    <header className="header" ref={headerRef}>
       <div className="header__main">
         <div className="container header__main-inner">
           <a href={homePrefix || '#'} className="logo" aria-label="Robovix — Thế giới đồ chơi công nghệ">
@@ -125,7 +159,57 @@ export default function Header({ isProductPage }) {
             />
           </a>
 
-          <nav id="main-nav" className={`nav${open ? ' nav--open' : ''}`} aria-label={t('nav.mainMenu')}>
+          <form className="header__search" onSubmit={handleSearch} role="search">
+            <input
+              type="search"
+              name="q"
+              value={query}
+              onChange={(e) => setQuery(e.target.value)}
+              placeholder={t('header.searchPlaceholder')}
+              aria-label={t('header.searchAria')}
+            />
+            <button type="submit" className="header__search-btn">
+              {t('header.search')}
+            </button>
+          </form>
+
+          <div className="header__actions">
+            <a
+              href={`${homePrefix}#shop`}
+              className="header__icon-btn"
+              aria-label={t('header.wishlist')}
+              title={t('header.wishlistTitle')}
+            >
+              <span aria-hidden="true">♡</span>
+              <span className="header__badge">0</span>
+            </a>
+            <a
+              href={`${homePrefix}#shop`}
+              className="header__icon-btn"
+              aria-label={t('header.cart')}
+              title={t('header.cartTitle')}
+            >
+              <span aria-hidden="true">🛒</span>
+              <span className="header__badge">0</span>
+            </a>
+          </div>
+
+          <button
+            type="button"
+            className={`burger ${open ? 'burger--open' : ''}`}
+            onClick={() => setOpen(!open)}
+            aria-label={t('header.menu')}
+            aria-expanded={open}
+            aria-controls="main-nav"
+          >
+            <span /><span /><span />
+          </button>
+        </div>
+      </div>
+
+      <div className={`header__nav ${open ? 'header__nav--open' : ''}`}>
+        <div className="container header__nav-inner">
+          <nav id="main-nav" className="nav" aria-label={t('nav.mainMenu')}>
             {links.map((l) => (
               <a
                 key={l.href + l.label}
@@ -138,90 +222,56 @@ export default function Header({ isProductPage }) {
             ))}
           </nav>
 
-          <div className="header__controls">
-            <div className="header__meta">
-              <div className="header__social" aria-label={t('nav.social')}>
-                {socials.map((s) => (
-                  <a
-                    key={s.id}
-                    href={s.href}
-                    className={`header__social-link header__social-link--${s.id}`}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    aria-label={s.label}
-                    title={s.label}
-                  >
-                    {s.icon}
-                  </a>
-                ))}
-              </div>
-
-              <span className="header__meta-sep" aria-hidden="true" />
-
-              <div className="header__lang" ref={langRef}>
-                <button
-                  type="button"
-                  className={`header__lang-btn${langOpen ? ' header__lang-btn--open' : ''}`}
-                  aria-label={t('nav.language')}
-                  aria-expanded={langOpen}
-                  aria-haspopup="listbox"
-                  onClick={() => setLangOpen((v) => !v)}
+          <div className="header__meta">
+            <div className="header__social" aria-label={t('nav.social')}>
+              {socials.map((s) => (
+                <a
+                  key={s.id}
+                  href={s.href}
+                  className={`header__social-link header__social-link--${s.id}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label={s.label}
+                  title={s.label}
                 >
-                  <span className="header__lang-icon">{currentLang.icon}</span>
-                  <span className="header__lang-code">{currentLang.short}</span>
-                  <span className="header__lang-caret" aria-hidden="true">▾</span>
-                </button>
-
-                {langOpen && (
-                  <ul className="header__lang-menu" role="listbox" aria-label={t('nav.languages')}>
-                    {languageOptions.map((l) => (
-                      <li key={l.id} role="option" aria-selected={l.id === lang}>
-                        <button
-                          type="button"
-                          className={`header__lang-option${l.id === lang ? ' header__lang-option--active' : ''}`}
-                          onClick={() => selectLang(l.id)}
-                        >
-                          <span className="header__lang-icon">{l.icon}</span>
-                          <span>{l.id === 'vi' ? t('header.langVi') : t('header.langEn')}</span>
-                        </button>
-                      </li>
-                    ))}
-                  </ul>
-                )}
-              </div>
+                  {s.icon}
+                </a>
+              ))}
             </div>
 
-            <div className="header__actions">
-              <a
-                href={`${homePrefix}#shop`}
-                className="header__icon-btn"
-                aria-label={t('header.wishlist')}
-                title={t('header.wishlistTitle')}
-              >
-                <span aria-hidden="true">♡</span>
-                <span className="header__badge">0</span>
-              </a>
-              <a
-                href={`${homePrefix}#shop`}
-                className="header__icon-btn"
-                aria-label={t('header.cart')}
-                title={t('header.cartTitle')}
-              >
-                <span aria-hidden="true">🛒</span>
-                <span className="header__badge">0</span>
-              </a>
-            </div>
+            <span className="header__meta-sep" aria-hidden="true" />
 
-            <button
-              type="button"
-              className={`burger ${open ? 'burger--open' : ''}`}
-              onClick={() => setOpen(!open)}
-              aria-label={t('header.menu')}
-              aria-expanded={open}
-              aria-controls="main-nav"
-            >
-              <span /><span /><span />
-            </button>
+            <div className="header__lang" ref={langRef}>
+              <button
+                type="button"
+                className={`header__lang-btn${langOpen ? ' header__lang-btn--open' : ''}`}
+                aria-label={t('nav.language')}
+                aria-expanded={langOpen}
+                aria-haspopup="listbox"
+                onClick={() => setLangOpen((v) => !v)}
+              >
+                <span className="header__lang-icon">{currentLang.icon}</span>
+                <span className="header__lang-code">{currentLang.short}</span>
+                <span className="header__lang-caret" aria-hidden="true">▾</span>
+              </button>
+
+              {langOpen && (
+                <ul className="header__lang-menu" role="listbox" aria-label={t('nav.languages')}>
+                  {languageOptions.map((l) => (
+                    <li key={l.id} role="option" aria-selected={l.id === lang}>
+                      <button
+                        type="button"
+                        className={`header__lang-option${l.id === lang ? ' header__lang-option--active' : ''}`}
+                        onClick={() => selectLang(l.id)}
+                      >
+                        <span className="header__lang-icon">{l.icon}</span>
+                        <span>{l.id === 'vi' ? t('header.langVi') : t('header.langEn')}</span>
+                      </button>
+                    </li>
+                  ))}
+                </ul>
+              )}
+            </div>
           </div>
         </div>
       </div>

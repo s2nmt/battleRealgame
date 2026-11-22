@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { categories, products, storeInfo } from '../data/products';
 import { useLanguage } from '../i18n/LanguageContext';
 import { formatPrice } from '../utils/formatPrice';
@@ -99,6 +99,7 @@ function ProductSection({
   filterCategories = categories,
   activeCategory,
   onCategoryChange,
+  searchQuery,
 }) {
   const { t, pick } = useLanguage();
   const isNew = id === 'shop-new';
@@ -119,7 +120,9 @@ function ProductSection({
             <div className="shop-store-head">
               <div className="shop-store-head__copy">
                 <h2 id={`${id}-title`} className="section__title section__title--single">{title}</h2>
-                <p className="section__desc">{description}</p>
+                <p className="section__desc">
+                  {searchQuery ? t('shop.searchResult', { query: searchQuery }) : description}
+                </p>
               </div>
             </div>
 
@@ -175,14 +178,34 @@ function ProductSection({
 }
 
 export default function Shop() {
-  const { t } = useLanguage();
+  const { t, pick } = useLanguage();
   const [activeCategory, setActiveCategory] = useState('all');
+  const [searchQuery, setSearchQuery] = useState(
+    () => (new URLSearchParams(window.location.search).get('q') ?? '').trim(),
+  );
 
-  const storeProducts = products
+  useEffect(() => {
+    function onSearch(event) {
+      setSearchQuery(event.detail);
+      setActiveCategory('all');
+    }
+
+    window.addEventListener('robovix:search', onSearch);
+    return () => window.removeEventListener('robovix:search', onSearch);
+  }, []);
+
+  const query = searchQuery.toLowerCase();
+  const matches = query
+    ? products.filter((product) =>
+        [product.name, product.category, product.description]
+          .some((text) => pick(text).toLowerCase().includes(query)),
+      )
+    : products;
+  const storeProducts = matches
     .filter((product) => product.catalogGroup !== 'accessories' &&
       (activeCategory === 'all' || product.categoryId === activeCategory))
     .sort((first, second) => Number(Boolean(second.heroImage)) - Number(Boolean(first.heroImage)));
-  const accessories = products.filter((product) => product.catalogGroup === 'accessories');
+  const accessories = matches.filter((product) => product.catalogGroup === 'accessories');
 
   return (
     <>
@@ -194,12 +217,14 @@ export default function Shop() {
         showFilters
         activeCategory={activeCategory}
         onCategoryChange={setActiveCategory}
+        searchQuery={searchQuery}
       />
       <ProductSection
         id="diy"
         title={t('shop.accessoriesTitle')}
         description={t('shop.accessoriesDesc')}
         items={accessories}
+        searchQuery={searchQuery}
       />
     </>
   );
