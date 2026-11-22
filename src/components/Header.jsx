@@ -80,17 +80,17 @@ const languageOptions = [
   },
 ];
 
-export default function Header() {
+export default function Header({ isProductPage }) {
   const { lang, setLang, t } = useLanguage();
   const [open, setOpen] = useState(false);
-  const [query, setQuery] = useState('');
   const [langOpen, setLangOpen] = useState(false);
   const langRef = useRef(null);
+  const homePrefix = isProductPage ? './' : '';
 
   const links = [
     { href: '#', label: t('nav.home') },
     { href: '#shop', label: t('nav.shop') },
-    { href: '#diy', label: t('nav.controlBoards') },
+    { href: '#diy', label: t('nav.accessories') },
     { href: '#how', label: t('nav.about') },
   ];
 
@@ -106,14 +106,6 @@ export default function Header() {
     return () => document.removeEventListener('pointerdown', onPointerDown);
   }, []);
 
-  function handleSearch(e) {
-    e.preventDefault();
-    const q = query.trim();
-    window.dispatchEvent(new CustomEvent('robovix:search', { detail: q }));
-    document.getElementById('shop')?.scrollIntoView({ behavior: 'smooth' });
-    setOpen(false);
-  }
-
   function selectLang(id) {
     setLang(id);
     setLangOpen(false);
@@ -123,7 +115,7 @@ export default function Header() {
     <header className="header">
       <div className="header__main">
         <div className="container header__main-inner">
-          <a href="#" className="logo" aria-label="Robovix — Thế giới đồ chơi công nghệ">
+          <a href={homePrefix || '#'} className="logo" aria-label="Robovix — Thế giới đồ chơi công nghệ">
             <img
               src="/logo-wordmark.png"
               alt="Robovix — Thế giới đồ chơi công nghệ"
@@ -133,60 +125,12 @@ export default function Header() {
             />
           </a>
 
-          <form className="header__search" onSubmit={handleSearch} role="search">
-            <input
-              type="search"
-              name="q"
-              value={query}
-              onChange={(e) => setQuery(e.target.value)}
-              placeholder={t('header.searchPlaceholder')}
-              aria-label={t('header.searchAria')}
-            />
-            <button type="submit" className="header__search-btn">
-              {t('header.search')}
-            </button>
-          </form>
-
-          <div className="header__actions">
-            <a
-              href="#shop"
-              className="header__icon-btn"
-              aria-label={t('header.wishlist')}
-              title={t('header.wishlistTitle')}
-            >
-              <span aria-hidden="true">♡</span>
-              <span className="header__badge">0</span>
-            </a>
-            <a
-              href="#shop"
-              className="header__icon-btn"
-              aria-label={t('header.cart')}
-              title={t('header.cartTitle')}
-            >
-              <span aria-hidden="true">🛒</span>
-              <span className="header__badge">0</span>
-            </a>
-          </div>
-
-          <button
-            type="button"
-            className={`burger ${open ? 'burger--open' : ''}`}
-            onClick={() => setOpen(!open)}
-            aria-label={t('header.menu')}
-          >
-            <span /><span /><span />
-          </button>
-        </div>
-      </div>
-
-      <div className={`header__nav ${open ? 'header__nav--open' : ''}`}>
-        <div className="container header__nav-inner">
-          <nav className="nav" aria-label={t('nav.mainMenu')}>
+          <nav id="main-nav" className={`nav${open ? ' nav--open' : ''}`} aria-label={t('nav.mainMenu')}>
             {links.map((l) => (
               <a
                 key={l.href + l.label}
-                href={l.href}
-                className={`nav__link${l.href === '#' ? ' nav__link--active' : ''}`}
+                href={`${homePrefix}${l.href}`}
+                className={`nav__link${!isProductPage && l.href === '#' ? ' nav__link--active' : ''}`}
                 onClick={() => setOpen(false)}
               >
                 {l.label}
@@ -194,56 +138,90 @@ export default function Header() {
             ))}
           </nav>
 
-          <div className="header__meta">
-            <div className="header__social" aria-label={t('nav.social')}>
-              {socials.map((s) => (
-                <a
-                  key={s.id}
-                  href={s.href}
-                  className={`header__social-link header__social-link--${s.id}`}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  aria-label={s.label}
-                  title={s.label}
+          <div className="header__controls">
+            <div className="header__meta">
+              <div className="header__social" aria-label={t('nav.social')}>
+                {socials.map((s) => (
+                  <a
+                    key={s.id}
+                    href={s.href}
+                    className={`header__social-link header__social-link--${s.id}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label={s.label}
+                    title={s.label}
+                  >
+                    {s.icon}
+                  </a>
+                ))}
+              </div>
+
+              <span className="header__meta-sep" aria-hidden="true" />
+
+              <div className="header__lang" ref={langRef}>
+                <button
+                  type="button"
+                  className={`header__lang-btn${langOpen ? ' header__lang-btn--open' : ''}`}
+                  aria-label={t('nav.language')}
+                  aria-expanded={langOpen}
+                  aria-haspopup="listbox"
+                  onClick={() => setLangOpen((v) => !v)}
                 >
-                  {s.icon}
-                </a>
-              ))}
+                  <span className="header__lang-icon">{currentLang.icon}</span>
+                  <span className="header__lang-code">{currentLang.short}</span>
+                  <span className="header__lang-caret" aria-hidden="true">▾</span>
+                </button>
+
+                {langOpen && (
+                  <ul className="header__lang-menu" role="listbox" aria-label={t('nav.languages')}>
+                    {languageOptions.map((l) => (
+                      <li key={l.id} role="option" aria-selected={l.id === lang}>
+                        <button
+                          type="button"
+                          className={`header__lang-option${l.id === lang ? ' header__lang-option--active' : ''}`}
+                          onClick={() => selectLang(l.id)}
+                        >
+                          <span className="header__lang-icon">{l.icon}</span>
+                          <span>{l.id === 'vi' ? t('header.langVi') : t('header.langEn')}</span>
+                        </button>
+                      </li>
+                    ))}
+                  </ul>
+                )}
+              </div>
             </div>
 
-            <span className="header__meta-sep" aria-hidden="true" />
-
-            <div className="header__lang" ref={langRef}>
-              <button
-                type="button"
-                className={`header__lang-btn${langOpen ? ' header__lang-btn--open' : ''}`}
-                aria-label={t('nav.language')}
-                aria-expanded={langOpen}
-                aria-haspopup="listbox"
-                onClick={() => setLangOpen((v) => !v)}
+            <div className="header__actions">
+              <a
+                href={`${homePrefix}#shop`}
+                className="header__icon-btn"
+                aria-label={t('header.wishlist')}
+                title={t('header.wishlistTitle')}
               >
-                <span className="header__lang-icon">{currentLang.icon}</span>
-                <span className="header__lang-code">{currentLang.short}</span>
-                <span className="header__lang-caret" aria-hidden="true">▾</span>
-              </button>
-
-              {langOpen && (
-                <ul className="header__lang-menu" role="listbox" aria-label={t('nav.languages')}>
-                  {languageOptions.map((l) => (
-                    <li key={l.id} role="option" aria-selected={l.id === lang}>
-                      <button
-                        type="button"
-                        className={`header__lang-option${l.id === lang ? ' header__lang-option--active' : ''}`}
-                        onClick={() => selectLang(l.id)}
-                      >
-                        <span className="header__lang-icon">{l.icon}</span>
-                        <span>{l.id === 'vi' ? t('header.langVi') : t('header.langEn')}</span>
-                      </button>
-                    </li>
-                  ))}
-                </ul>
-              )}
+                <span aria-hidden="true">♡</span>
+                <span className="header__badge">0</span>
+              </a>
+              <a
+                href={`${homePrefix}#shop`}
+                className="header__icon-btn"
+                aria-label={t('header.cart')}
+                title={t('header.cartTitle')}
+              >
+                <span aria-hidden="true">🛒</span>
+                <span className="header__badge">0</span>
+              </a>
             </div>
+
+            <button
+              type="button"
+              className={`burger ${open ? 'burger--open' : ''}`}
+              onClick={() => setOpen(!open)}
+              aria-label={t('header.menu')}
+              aria-expanded={open}
+              aria-controls="main-nav"
+            >
+              <span /><span /><span />
+            </button>
           </div>
         </div>
       </div>

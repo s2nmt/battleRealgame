@@ -1,4 +1,3 @@
-import { useState } from 'react';
 import { useLanguage } from '../i18n/LanguageContext';
 
 const socials = [
@@ -43,13 +42,23 @@ const socials = [
   },
 ];
 
-export default function Footer() {
-  const { t } = useLanguage();
-  const [submitted, setSubmitted] = useState(false);
+export default function Footer({ product }) {
+  const { t, pick } = useLanguage();
+  const productName = product && pick(product.name);
 
   function handleSubmit(e) {
     e.preventDefault();
-    setSubmitted(true);
+    const form = e.currentTarget;
+    const fields = new FormData(form);
+    const interest = form.elements.namedItem('interest').selectedOptions[0].textContent;
+    const subject = encodeURIComponent(`Robovix — ${interest}`);
+    const body = encodeURIComponent([
+      `${t('contact.interest')}: ${interest}`,
+      `${t('contact.name')}: ${fields.get('name')}`,
+      `${t('contact.phone')}: ${fields.get('phone')}`,
+      `${t('contact.email')}: ${fields.get('email')}`,
+    ].join('\n'));
+    window.location.href = `mailto:info@robovix.studio?subject=${subject}&body=${body}`;
   }
 
   return (
@@ -100,8 +109,9 @@ export default function Footer() {
             <div className="footer__col">
               <h3 className="footer__heading">{t('footer.explore')}</h3>
               <div className="footer__links">
-                <a href="#shop">{t('footer.shop')}</a>
-                <a href="#how">{t('footer.about')}</a>
+                <a href="./#shop">{t('nav.shop')}</a>
+                <a href="./#diy">{t('nav.accessories')}</a>
+                <a href="./#how">{t('footer.about')}</a>
               </div>
             </div>
 
@@ -110,7 +120,7 @@ export default function Footer() {
               <ul className="footer__info">
                 <li>
                   <span className="footer__label">{t('footer.email')}</span>
-                  <a href="mailto:info@robovix.studio">info@robovix.studio</a>
+                  <a href="mailto:robovixvn@gmail.com">robovixvn@gmail.com</a>
                 </li>
                 <li>
                   <span className="footer__label">{t('footer.phone')}</span>
@@ -132,45 +142,43 @@ export default function Footer() {
             <h3 className="footer__heading">{t('footer.formHeading')}</h3>
             <p className="footer__form-desc">{t('footer.formDesc')}</p>
 
-            {submitted ? (
-              <div className="footer__success">
-                <strong>{t('contact.successTitle')}</strong>
-                <p>{t('contact.successDesc')}</p>
-              </div>
-            ) : (
-              <form className="footer__form" onSubmit={handleSubmit}>
-                <input
-                  type="text"
-                  name="name"
-                  required
-                  placeholder={t('contact.namePlaceholder')}
-                  aria-label={t('contact.name')}
-                />
-                <input
-                  type="tel"
-                  name="phone"
-                  required
-                  placeholder={t('contact.phonePlaceholder')}
-                  aria-label={t('contact.phone')}
-                />
-                <input
-                  type="email"
-                  name="email"
-                  placeholder={t('contact.emailPlaceholder')}
-                  aria-label={t('contact.email')}
-                />
-                <select name="interest" defaultValue="products" aria-label={t('contact.interest')}>
-                  <option value="products">{t('contact.interestProducts')}</option>
-                  <option value="oem-odm">{t('contact.interestOem')}</option>
-                  <option value="outsource-hardware">{t('contact.interestHardware')}</option>
-                  <option value="outsource-software">{t('contact.interestSoftware')}</option>
-                  <option value="all">{t('contact.interestAll')}</option>
-                </select>
-                <button type="submit" className="btn btn--primary btn--sm btn--block">
-                  {t('contact.submit')}
-                </button>
-              </form>
-            )}
+            <form className="footer__form" onSubmit={handleSubmit}>
+              <input
+                type="text"
+                name="name"
+                required
+                placeholder={t('contact.namePlaceholder')}
+                aria-label={t('contact.name')}
+              />
+              <input
+                type="tel"
+                name="phone"
+                required
+                placeholder={t('contact.phonePlaceholder')}
+                aria-label={t('contact.phone')}
+              />
+              <input
+                type="email"
+                name="email"
+                placeholder={t('contact.emailPlaceholder')}
+                aria-label={t('contact.email')}
+              />
+              <select
+                name="interest"
+                defaultValue={productName ? 'selected-product' : 'products'}
+                aria-label={t('contact.interest')}
+              >
+                {productName && <option value="selected-product">{productName}</option>}
+                <option value="products">{t('contact.interestProducts')}</option>
+                <option value="oem-odm">{t('contact.interestOem')}</option>
+                <option value="outsource-hardware">{t('contact.interestHardware')}</option>
+                <option value="outsource-software">{t('contact.interestSoftware')}</option>
+                <option value="all">{t('contact.interestAll')}</option>
+              </select>
+              <button type="submit" className="btn btn--primary btn--sm btn--block">
+                {t('contact.submit')}
+              </button>
+            </form>
           </div>
         </div>
 

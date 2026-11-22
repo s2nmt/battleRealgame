@@ -6,13 +6,15 @@ const ROTATE_MS = 6000;
 
 export default function Hero() {
   const { t, pick } = useLanguage();
-  const featured = products.filter((product) => product.heroImage).slice(0, 2);
+  const featured = products
+    .filter((product) => product.heroImage && product.catalogGroup !== 'accessories')
+    .slice(0, 2);
   const [index, setIndex] = useState(0);
   const current = featured[index] ?? featured[0];
   const image = current.heroImage || current.images?.[0];
-  const name = pick(current.name);
+  const name = current.model ?? pick(current.name);
   const category = pick(current.category);
-  const description = pick(current.description);
+  const description = pick(current.heroDescription ?? current.description);
 
   useEffect(() => {
     if (featured.length < 2) return undefined;
@@ -34,7 +36,7 @@ export default function Hero() {
           <p className="hero__desc">{description}</p>
 
           <div className="hero__actions">
-            <a href="#shop" className="btn btn--primary btn--lg">
+            <a href={current.article ? `?product=${current.id}` : '#shop'} className="btn btn--primary btn--lg">
               {t('hero.viewShop')}
             </a>
           </div>

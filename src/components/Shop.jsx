@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useState } from 'react';
+import { useState } from 'react';
 import { categories, products, storeInfo } from '../data/products';
 import { useLanguage } from '../i18n/LanguageContext';
 import { formatPrice } from '../utils/formatPrice';
@@ -32,18 +32,30 @@ function ProductCard({ product, variant = 'store' }) {
   const { t, pick } = useLanguage();
   const available = product.status === 'available' && product.price != null;
   const showcase = variant === 'showcase';
+  const isAccessory = product.catalogGroup === 'accessories';
   const name = pick(product.name);
+  const title = isAccessory ? (product.model ?? name) : name;
   const category = pick(product.category);
   const comingSoon = pick(storeInfo.comingSoonLabel) || t('shop.comingSoon');
   const badge = product.badge === 'new' ? t('shop.badgeNew') : pick(product.badge);
+  const articleUrl = product.article ? `?product=${product.id}` : null;
 
   return (
     <article className={`shop-card${showcase ? ' shop-card--showcase' : ''}`}>
       {badge && <span className="shop-card__badge">{badge}</span>}
-      <ProductMedia product={product} name={name} />
+      {articleUrl && !showcase ? (
+        <a href={articleUrl} className="shop-card__media-link" aria-label={name}>
+          <ProductMedia product={product} name={name} />
+        </a>
+      ) : (
+        <ProductMedia product={product} name={name} />
+      )}
       <div className="shop-card__body">
         <span className="shop-card__category">{category}</span>
-        <h3 className="shop-card__name">{name}</h3>
+        <h3 className="shop-card__name">
+          {articleUrl && !showcase ? <a href={articleUrl}>{title}</a> : title}
+        </h3>
+        {isAccessory && <p className="shop-card__summary">{pick(product.description)}</p>}
         {!showcase && (
           <>
             <div className="shop-card__price-row">
@@ -54,10 +66,12 @@ function ProductCard({ product, variant = 'store' }) {
               )}
             </div>
             <a
-              href="#contact"
+              href={articleUrl ?? '#contact'}
               className={`btn ${available ? 'btn--primary' : 'btn--outline'} btn--sm btn--block`}
             >
-              {available ? t('shop.addToCart') : t('shop.registerInterest')}
+              {articleUrl
+                ? t('hero.viewShop')
+                : t(available ? 'shop.addToCart' : 'shop.registerInterest')}
             </a>
           </>
         )}
@@ -71,22 +85,20 @@ function ProductCard({ product, variant = 'store' }) {
           </div>
         )}
       </div>
-      {showcase && <a href="#contact" className="shop-card__link" aria-label={name} />}
+      {showcase && <a href={articleUrl ?? '#contact'} className="shop-card__link" aria-label={name} />}
     </article>
   );
 }
 
 function ProductSection({
   id,
-  tag,
   title,
+  description,
   items,
   showFilters,
   filterCategories = categories,
   activeCategory,
   onCategoryChange,
-  searchQuery,
-  showViewAll,
 }) {
   const { t, pick } = useLanguage();
   const isNew = id === 'shop-new';
@@ -94,28 +106,21 @@ function ProductSection({
   return (
     <section
       id={id}
+      aria-labelledby={`${id}-title`}
       className={`section ${isNew ? 'section--showcase' : 'section--light'}`}
     >
       <div className="container">
         {isNew ? (
           <div className="shop-section-head">
-            <h2 className="shop-section-head__title">{title}</h2>
+            <h2 id={`${id}-title`} className="shop-section-head__title">{title}</h2>
           </div>
         ) : (
           <>
             <div className="shop-store-head">
               <div className="shop-store-head__copy">
-                {tag && <span className="section__tag">{tag}</span>}
-                <h2 className="section__title section__title--single">{title}</h2>
-                {searchQuery ? (
-                  <p className="section__desc">{t('shop.searchResult', { query: searchQuery })}</p>
-                ) : null}
+                <h2 id={`${id}-title`} className="section__title section__title--single">{title}</h2>
+                <p className="section__desc">{description}</p>
               </div>
-              {showViewAll && (
-                <button type="button" className="btn btn--outline btn--sm shop-store-head__more">
-                  {t('shop.viewAll')}
-                </button>
-              )}
             </div>
 
             {showFilters && (
@@ -170,65 +175,31 @@ function ProductSection({
 }
 
 export default function Shop() {
-  const { t, pick, lang } = useLanguage();
+  const { t } = useLanguage();
   const [activeCategory, setActiveCategory] = useState('all');
 
-  const [searchQuery, setSearchQuery] = useState('');
-
-  useEffect(() => {
-    function onSearch(e) {
-      setSearchQuery(e.detail || '');
-      setActiveCategory('all');
-
-    }
-    window.addEventListener('robovix:search', onSearch);
-    return () => window.removeEventListener('robovix:search', onSearch);
-  }, []);
-
-  const storeProducts = useMemo(() => {
-    let list = products.filter((p) => p.categoryId !== 'diy');
-    if (activeCategory !== 'all') {
-      list = list.filter((p) => p.categoryId === activeCategory);
-    }
-    const q = searchQuery.trim().toLowerCase();
-    if (q) {
-      list = list.filter((p) => {
-        const name = pick(p.name).toLowerCase();
-        const category = pick(p.category).toLowerCase();
-        const description = pick(p.description).toLowerCase();
-        return name.includes(q) || category.includes(q) || description.includes(q);
-      });
-    }
-    return list;
-  }, [activeCategory, searchQuery, pick, lang]);
-
-  const diyProducts = products.filter((p) => {
-    if (p.categoryId !== 'diy') return false;
-
-    const q = searchQuery.trim().toLowerCase();
-    return !q || [p.name, p.category, p.description].some((text) =>
-      pick(text).toLowerCase().includes(q),
-    );
-  });
+  const storeProducts = products
+    .filter((product) => product.catalogGroup !== 'accessories' &&
+      (activeCategory === 'all' || product.categoryId === activeCategory))
+    .sort((first, second) => Number(Boolean(second.heroImage)) - Number(Boolean(first.heroImage)));
+  const accessories = products.filter((product) => product.catalogGroup === 'accessories');
 
   return (
     <>
       <ProductSection
         id="shop"
-        tag={t('shop.storeTag')}
         title={t('shop.storeTitle')}
+        description={t('shop.storeDesc')}
         items={storeProducts}
         showFilters
         activeCategory={activeCategory}
         onCategoryChange={setActiveCategory}
-        searchQuery={searchQuery}
-        showViewAll
       />
       <ProductSection
         id="diy"
-        title={t('shop.diyTitle')}
-        items={diyProducts}
-        searchQuery={searchQuery}
+        title={t('shop.accessoriesTitle')}
+        description={t('shop.accessoriesDesc')}
+        items={accessories}
       />
     </>
   );
